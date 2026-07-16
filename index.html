@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Five Hearts Events Décor & Hire | Cape Town — We Decorate Memories</title>
+<meta name="description" content="Luxury event décor hire in Athlone, Bridgetown, Cape Town. Glassware, cutlery, porcelain, catering, chairs, tables & floral décor for weddings, birthdays & anniversaries. WhatsApp enquiry only.">
+<meta name="keywords" content="event décor hire Cape Town, wedding décor Athlone, Bridgetown party hire, glassware hire, cutlery rental, porcelain hire, chair covers, table linen, event styling South Africa">
+<meta name="geo.region" content="ZA-WC">
+<meta name="geo.placename" content="Athlone, Bridgetown, Cape Town">
+<meta name="geo.position" content="-33.9631;18.5083">
+<meta name="ICBM" content="-33.9631, 18.5083">
+<meta name="theme-color" content="#a04050">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/cloudinary-video-player@latest/dist/cld-video-player.min.css">
+<script src="https://unpkg.com/cloudinary-video-player@latest/dist/cld-video-player.min.js"></script>
+<style>
+:root{--bg:#f0e6e8;--bg-deep:#e8d9dc;--bg-light:#faf5f6;--ink:#2c1810;--rose:#a04050;--rose-light:#c97b84;--gold:#d4af37;--gold-light:#f4e5bc;--stone:#8a6a6e;--line:#dccfd2;--shadow-light:rgba(255,255,255,0.72);--shadow-dark:rgba(160,64,80,0.18);--glass:rgba(255,255,255,0.25);--glass-border:rgba(255,255,255,0.45);--neu-radius:24px;--neu-radius-lg:32px;--transition:all .35s cubic-bezier(.4,0,.2,1)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5,h6,.brand-font{font-family:'Cinzel',serif}.serif-font{font-family:'Playfair Display',serif}
+
+/* Loader */
+#loader{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#fdf2f4,#f5e6ea);display:flex;flex-direction:column;justify-content:center;align-items:center;transition:opacity 1s ease,visibility 1s}
+.loader-logo{width:280px;max-width:80vw;height:auto;animation:loaderBreathe 3s ease-in-out infinite;filter:drop-shadow(0 20px 60px rgba(160,64,80,.2))}
+@keyframes loaderBreathe{0%,100%{transform:scale(1) translateY(0);opacity:.9}50%{transform:scale(1.03) translateY(-8px);opacity:1}}
+.loader-text{margin-top:30px;font-family:'Cinzel',serif;font-size:1.5rem;letter-spacing:8px;color:var(--rose);font-weight:700;animation:shimmerText 2.5s ease-in-out infinite;background:linear-gradient(90deg,var(--rose),var(--gold),var(--rose));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.loader-hearts{display:flex;gap:14px;margin-top:24px}
+.loader-hearts span{color:var(--rose);font-size:1.1rem;opacity:0;animation:loaderHeartFloat 1.8s ease-in-out infinite}
+.loader-hearts span:nth-child(1){animation-delay:0s}
+.loader-hearts span:nth-child(2){animation-delay:.15s}
+.loader-hearts span:nth-child(3){animation-delay:.3s}
+.loader-hearts span:nth-child(4){animation-delay:.45s}
+.loader-hearts span:nth-child(5){animation-delay:.6s}
+@keyframes loaderHeartFloat{0%{opacity:0;transform:translateY(10px) scale(.6)}30%{opacity:1;transform:translateY(0) scale(1)}70%{opacity:1}100%{opacity:0;transform:translateY(-14px) scale(.6)}}
+@keyframes shimmerText{0%{background-position:0% center}100%{background-position:200% center}}
+
+/* Video Hero (replaces static parallax image) */
+.parallax-hero{position:fixed;top:0;left:0;width:100%;height:120%;z-index:-3;overflow:hidden;will-change:transform;background:#2c1810}
+.parallax-hero video,.parallax-hero .cld-video-player{width:100%;height:100%;object-fit:cover}
+.parallax-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(240,230,232,.3) 0%,rgba(240,230,232,.7) 60%,var(--bg) 100%)}
+#bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;pointer-events:none}
+
+/* Nav */
+nav{position:fixed;top:0;width:100%;z-index:1000;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;background-color:#f0e6e8;background:rgba(240,230,232,.96);backdrop-filter:blur(24px) saturate(1.2);-webkit-backdrop-filter:blur(24px) saturate(1.2);border-bottom:1px solid rgba(212,175,55,.18);box-shadow:0 4px 20px rgba(44,24,16,.06);transition:var(--transition)}
+nav.scrolled{background:rgba(240,230,232,.95);box-shadow:0 4px 30px rgba(160,64,80,.08)}
+.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;box-shadow:5px 5px 14px var(--shadow-dark),-5px -5px 14px var(--shadow-light);transition:var(--transition)}
+.nav-brand:hover img{box-shadow:8px 8px 24px var(--shadow-dark),-8px -8px 24px var(--shadow-light);transform:scale(1.05)}
+.nav-brand span{font-family:'Cinzel',serif;font-weight:700;font-size:1.15rem;color:var(--rose);letter-spacing:1px}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;position:relative;transition:var(--transition);padding:8px 0}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width .3s ease}
+.nav-links a:hover{color:var(--rose-light)}.nav-links a:hover::after{width:100%}
+.inquiry-pill{display:flex;align-items:center;gap:10px;padding:10px 22px;border-radius:50px;background:var(--bg);box-shadow:5px 5px 12px var(--shadow-dark),-5px -5px 12px var(--shadow-light);font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--rose);cursor:pointer;transition:var(--transition);border:none;position:relative;overflow:hidden}
+.inquiry-pill::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(212,175,55,.15),transparent);transform:translateX(-100%);transition:transform .5s}
+.inquiry-pill:hover::before{transform:translateX(100%)}
+.inquiry-pill:hover{box-shadow:inset 4px 4px 8px var(--shadow-dark),inset -4px -4px 8px var(--shadow-light);color:var(--gold)}
+.inquiry-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulseDot 2s ease-in-out infinite}
+@keyframes pulseDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.7}}
+
+/* Floating Logo Button */
+
+/* Floating Hearts */
+.heart-float{position:fixed;pointer-events:none;z-index:1001;font-size:20px;opacity:0;animation:heartFloatUp 1.2s ease-out forwards}
+@keyframes heartFloatUp{0%{transform:translateY(0) scale(.5) rotate(0deg);opacity:1}50%{opacity:.8}100%{transform:translateY(-120px) scale(1.3) rotate(20deg);opacity:0}}
+
+/* Hero */
+.hero{min-height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:140px 20px 80px;text-align:center;overflow:hidden}
+@keyframes heroLogoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero-title{font-family:'Cinzel',serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:700;line-height:1.05;letter-spacing:4px;margin-bottom:8px;position:relative}
+.hero-title .line1{display:block;background:linear-gradient(135deg,#8b1e3f 0%,#a04050 40%,#d4af37 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(2px 2px 0px rgba(139,30,63,.3)) drop-shadow(4px 4px 0px rgba(212,175,55,.15));animation:titleShimmer 4s ease-in-out infinite;background-size:200% auto}
+.hero-title .line2{display:block;font-size:.45em;letter-spacing:6px;font-weight:600;color:var(--gold);margin-top:10px;text-shadow:1px 1px 2px rgba(212,175,55,.3)}
+.hero-title .line3{display:block;font-family:'Playfair Display',serif;font-style:italic;font-size:.28em;letter-spacing:3px;color:var(--rose-light);margin-top:12px;font-weight:400}
+@keyframes titleShimmer{0%,100%{background-position:0% center}50%{background-position:100% center}}
+.hero-content{max-width:760px;padding:50px 40px;background:var(--glass);backdrop-filter:blur(24px) saturate(1.3);border:1px solid var(--glass-border);border-radius:var(--neu-radius-lg);box-shadow:0 20px 60px rgba(160,64,80,.1),inset 0 1px 0 rgba(255,255,255,.4);margin-top:40px}
+.hero-subtitle{font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;color:var(--gold);margin-bottom:12px;letter-spacing:1px}
+.hero p{font-size:1rem;line-height:1.85;color:var(--stone);margin-bottom:32px}
+.cta-btn{display:inline-flex;align-items:center;gap:12px;padding:16px 40px;background:var(--bg);color:var(--rose);text-decoration:none;font-weight:700;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;border-radius:50px;border:none;cursor:pointer;box-shadow:8px 8px 20px var(--shadow-dark),-8px -8px 20px var(--shadow-light);transition:var(--transition);font-family:'Cinzel',serif;position:relative;overflow:hidden}
+.cta-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(212,175,55,.2),transparent);transform:translateX(-100%);transition:transform .6s}
+.cta-btn:hover::before{transform:translateX(100%)}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:12px 12px 30px var(--shadow-dark),-12px -12px 30px var(--shadow-light),0 0 20px rgba(212,175,55,.2);color:var(--gold)}
+.cta-btn:active{box-shadow:inset 6px 6px 12px var(--shadow-dark),inset -6px -6px 12px var(--shadow-light);transform:translateY(0)}
+
+/* Marquee */
+.marquee{background:var(--rose);color:var(--bg-light);padding:14px 0;overflow:hidden;white-space:nowrap;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:600;position:relative;z-index:10}
+.marquee-inner{display:inline-block;animation:marqueeScroll 30s linear infinite}
+.marquee span{margin:0 40px}.marquee span::before{content:'♥';margin-right:40px;color:var(--gold)}
+@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Section Headers */
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;padding-bottom:24px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:20px}
+.section-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);font-weight:600}
+.section-title{font-family:'Cinzel',serif;font-size:clamp(32px,4vw,56px);font-weight:400;line-height:1.05;color:var(--rose);margin-top:8px}
+.section-title em{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold)}
+
+/* About */
+.about{padding:100px 5%}.about-card{max-width:860px;margin:0 auto;padding:60px 50px;background:var(--bg);border-radius:var(--neu-radius-lg);box-shadow:16px 16px 40px var(--shadow-dark),-16px -16px 40px var(--shadow-light);position:relative;overflow:hidden}
+.about-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,175,55,.05) 0%,transparent 70%);pointer-events:none}
+.about-card h2{font-size:2.4rem;color:var(--rose);margin-bottom:24px;text-align:center}
+.about-card h2::after{content:'♥';display:block;font-size:1.4rem;color:var(--gold);margin-top:10px}
+.about-card p{font-size:1.05rem;line-height:1.9;color:var(--stone);text-align:center}
+.about-card .highlight{color:var(--rose);font-weight:700}
+
+/* Proof of Concept Banner */
+.poc-banner{background:linear-gradient(135deg,rgba(160,64,80,.08),rgba(212,175,55,.08));border:2px dashed var(--gold);border-radius:var(--neu-radius);padding:30px 40px;margin-bottom:50px;text-align:center;position:relative;overflow:hidden}
+.poc-banner::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,175,55,.06) 0%,transparent 60%);pointer-events:none}
+.poc-banner h3{font-family:'Cinzel',serif;color:var(--rose);font-size:1.4rem;margin-bottom:10px;position:relative;z-index:1}
+.poc-banner p{color:var(--stone);font-size:.95rem;line-height:1.7;position:relative;z-index:1}
+.poc-banner .poc-icon{font-size:2rem;margin-bottom:12px;display:block}
+
+/* Catalogue */
+.catalogue{padding:100px 5%;max-width:1400px;margin:0 auto}
+.filter-bar{display:flex;justify-content:center;gap:14px;margin-bottom:50px;flex-wrap:wrap}
+.filter-btn{padding:12px 26px;background:var(--bg);color:var(--ink);border:none;border-radius:50px;font-family:'Lato',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:var(--transition);box-shadow:5px 5px 12px var(--shadow-dark),-5px -5px 12px var(--shadow-light)}
+.filter-btn:hover{transform:translateY(-2px);box-shadow:7px 7px 18px var(--shadow-dark),-7px -7px 18px var(--shadow-light)}
+.filter-btn.active{color:var(--rose);box-shadow:inset 4px 4px 8px var(--shadow-dark),inset -4px -4px 8px var(--shadow-light)}
+.catalogue-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:36px}
+
+/* Product Card */
+.card{background:var(--bg);border-radius:var(--neu-radius);overflow:hidden;box-shadow:12px 12px 30px var(--shadow-dark),-12px -12px 30px var(--shadow-light);transition:var(--transition);cursor:pointer;position:relative}
+.card:hover{transform:translateY(-10px);box-shadow:20px 20px 50px var(--shadow-dark),-20px -20px 50px var(--shadow-light)}
+.card-img-wrap{width:100%;aspect-ratio:4/5;overflow:hidden;position:relative;background:var(--bg-deep)}
+.card-img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease,filter .5s ease;filter:contrast(1.12) saturate(1.08)}
+.card:hover .card-img{transform:scale(1.06);filter:contrast(1.2) saturate(1.15)}
+.card-tag{position:absolute;top:16px;left:16px;z-index:3;padding:8px 14px;background:var(--bg);border-radius:20px;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--rose);box-shadow:3px 3px 8px var(--shadow-dark),-3px -3px 8px var(--shadow-light)}
+.card-tag.low{background:var(--rose);color:#fff;box-shadow:0 4px 15px rgba(160,64,80,.3)}
+.card-body{padding:26px}.card-body h3{font-size:1.2rem;color:var(--rose);margin-bottom:8px;line-height:1.2}
+.card-body p{font-size:.88rem;color:var(--stone);line-height:1.65;margin-bottom:18px}
+.card-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.card-stock{font-size:.72rem;color:var(--stone);letter-spacing:1px;text-transform:uppercase}
+.wa-enquire{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;background:var(--bg);color:var(--rose);border:none;border-radius:16px;font-weight:700;font-size:.82rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:var(--transition);box-shadow:6px 6px 14px var(--shadow-dark),-6px -6px 14px var(--shadow-light);font-family:'Cinzel',serif;position:relative;overflow:hidden}
+.wa-enquire::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(37,211,102,.1),transparent);transform:translateX(-100%);transition:transform .5s}
+.wa-enquire:hover::before{transform:translateX(100%)}
+.wa-enquire:hover{transform:scale(1.03);box-shadow:8px 8px 20px var(--shadow-dark),-8px -8px 20px var(--shadow-light),0 0 20px rgba(37,211,102,.15);color:#128c7e}
+.wa-enquire:active{box-shadow:inset 4px 4px 8px var(--shadow-dark),inset -4px -4px 8px var(--shadow-light)}
+.wa-enquire svg{width:18px;height:18px;fill:currentColor}
+.wa-enquire .enquire-pulse{position:absolute;top:6px;right:10px;width:8px;height:8px;border-radius:50%;background:var(--rose);box-shadow:0 2px 6px rgba(160,64,80,.5);animation:badgePulse 2s ease-in-out infinite;pointer-events:none}
+.heart-hint{position:absolute;top:-26px;left:50%;transform:translateX(-50%) translateY(6px) scale(.6);opacity:0;color:var(--rose);font-size:16px;pointer-events:none;transition:all .3s cubic-bezier(.34,1.56,.64,1);z-index:5}
+.heart-hint.show{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}
+
+/* Placeholder */
+.placeholder-card{background:var(--bg);border-radius:var(--neu-radius);padding:40px 30px;text-align:center;box-shadow:inset 6px 6px 14px var(--shadow-dark),inset -6px -6px 14px var(--shadow-light);border:2px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:320px;transition:var(--transition)}
+.placeholder-card:hover{border-color:var(--gold);box-shadow:inset 8px 8px 20px var(--shadow-dark),inset -8px -8px 20px var(--shadow-light)}
+.placeholder-card .ph-icon{font-size:3rem;margin-bottom:16px;animation:phBounce 2s ease-in-out infinite}
+@keyframes phBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.placeholder-card h4{font-family:'Cinzel',serif;color:var(--rose);font-size:1.1rem;margin-bottom:8px}
+.placeholder-card p{font-size:.85rem;color:var(--stone);line-height:1.6}
+
+/* Vignettes */
+.vignettes{padding:100px 5%;background:var(--bg-deep)}
+.vignette-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:40px;max-width:1200px;margin:0 auto}
+.vignette{background:var(--bg);border-radius:var(--neu-radius-lg);overflow:hidden;box-shadow:14px 14px 36px var(--shadow-dark),-14px -14px 36px var(--shadow-light);transition:var(--transition)}
+.vignette:hover{transform:translateY(-8px);box-shadow:20px 20px 50px var(--shadow-dark),-20px -20px 50px var(--shadow-light)}
+.vignette-img{width:100%;aspect-ratio:16/10;object-fit:cover;filter:grayscale(.1) contrast(1.05);transition:filter .5s}
+.vignette:hover .vignette-img{filter:grayscale(0) contrast(1.1)}
+.vignette-body{padding:30px}.vignette-body h3{font-family:'Cinzel',serif;color:var(--rose);font-size:1.3rem;margin-bottom:10px}
+.vignette-body p{font-size:.9rem;color:var(--stone);line-height:1.7;margin-bottom:20px}
+.vignette-cta{display:inline-block;padding:10px 24px;background:var(--bg);color:var(--gold);text-decoration:none;font-weight:700;font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;border-radius:50px;box-shadow:4px 4px 10px var(--shadow-dark),-4px -4px 10px var(--shadow-light);transition:var(--transition)}
+.vignette-cta:hover{box-shadow:inset 3px 3px 6px var(--shadow-dark),inset -3px -3px 6px var(--shadow-light);color:var(--rose)}
+
+/* FAQ */
+.faq{padding:100px 5%;max-width:800px;margin:0 auto}
+.faq-item{background:var(--bg);border-radius:var(--neu-radius);margin-bottom:20px;box-shadow:8px 8px 20px var(--shadow-dark),-8px -8px 20px var(--shadow-light);overflow:hidden;transition:var(--transition)}
+.faq-item.active{box-shadow:12px 12px 30px var(--shadow-dark),-12px -12px 30px var(--shadow-light)}
+.faq-question{width:100%;padding:24px 30px;display:flex;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;text-align:left;font-family:'Cinzel',serif;font-size:1.05rem;color:var(--rose);font-weight:600;letter-spacing:.5px}
+.faq-icon{width:32px;height:32px;flex-shrink:0;border-radius:50%;background:var(--bg);box-shadow:3px 3px 8px var(--shadow-dark),-3px -3px 8px var(--shadow-light);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--gold);transition:transform .4s cubic-bezier(.68,-.55,.265,1.55)}
+.faq-item.active .faq-icon{transform:rotate(180deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(.68,-.55,.265,1.55),padding .4s ease;padding:0 30px}
+.faq-item.active .faq-answer{max-height:500px;padding:0 30px 24px}
+.faq-answer p{font-size:.95rem;color:var(--stone);line-height:1.75}
+
+/* Contact */
+.contact{padding:100px 5%;text-align:center}
+.contact-box{max-width:700px;margin:0 auto;padding:60px 50px;background:var(--bg);border-radius:var(--neu-radius-lg);box-shadow:18px 18px 50px var(--shadow-dark),-18px -18px 50px var(--shadow-light);position:relative;overflow:hidden}
+.contact-box::before{content:'';position:absolute;top:-30%;right:-30%;width:60%;height:60%;background:radial-gradient(circle,rgba(212,175,55,.08) 0%,transparent 70%);pointer-events:none}
+.contact-box h2{font-size:2.2rem;color:var(--rose);margin-bottom:16px}
+.contact-box p{font-size:1.05rem;color:var(--stone);line-height:1.8;margin-bottom:36px}
+.wa-main-btn{display:inline-flex;align-items:center;gap:14px;padding:20px 50px;background:var(--bg);color:#25d366;text-decoration:none;font-weight:700;font-size:.95rem;letter-spacing:1.5px;text-transform:uppercase;font-family:'Cinzel',serif;border-radius:50px;box-shadow:10px 10px 25px var(--shadow-dark),-10px -10px 25px var(--shadow-light);transition:var(--transition);position:relative;z-index:2;overflow:hidden}
+.wa-main-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(37,211,102,.15),transparent);transform:translateX(-100%);transition:transform .6s}
+.wa-main-btn:hover::before{transform:translateX(100%)}
+.wa-main-btn:hover{transform:translateY(-4px) scale(1.02);box-shadow:14px 14px 35px var(--shadow-dark),-14px -14px 35px var(--shadow-light),0 0 30px rgba(37,211,102,.2);color:#128c7e}
+.wa-main-btn svg{width:24px;height:24px;fill:currentColor}
+
+/* Footer */
+footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
+.footer-hero-img{width:100%;max-width:900px;margin:0 auto;display:block;padding:60px 20px 40px;opacity:.9;filter:drop-shadow(0 10px 30px rgba(160,64,80,.1))}
+.footer-bg{position:absolute;inset:0;z-index:0;background-image:url('https://res.cloudinary.com/h7kbydly/image/upload/v1784139996/BG_intro_sbwaty.webp');background-size:cover;background-position:center;opacity:.12;filter:blur(2px)}
+.footer-glass{position:absolute;inset:0;z-index:1;background:rgba(240,230,232,.9);backdrop-filter:blur(16px) saturate(1.2)}
+.footer-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 5%}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;padding:60px 0 50px;border-bottom:1px solid var(--line)}
+.foot-brand{font-family:'Cinzel',serif;font-size:2.2rem;color:var(--rose);margin-bottom:16px;letter-spacing:2px}
+.foot-brand::after{content:'♥';display:block;font-size:1.2rem;color:var(--gold);margin-top:8px}
+.foot-desc{font-size:.9rem;color:var(--stone);line-height:1.7;max-width:300px}
+.foot-col h4{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);margin-bottom:20px;font-weight:700}
+.foot-col a{display:block;color:var(--ink);text-decoration:none;font-size:.88rem;margin-bottom:12px;transition:var(--transition)}
+.foot-col a:hover{color:var(--rose);padding-left:4px}
+.foot-bottom{display:flex;justify-content:space-between;padding:30px 0;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--stone);flex-wrap:wrap;gap:16px}
+
+/* WhatsApp FAB */
+.wa-fab-wrap{position:fixed;bottom:30px;right:30px;z-index:999;display:flex;flex-direction:column;align-items:center;gap:12px}
+.wa-fab{width:70px;height:70px;border-radius:50%;border:none;cursor:pointer;background:var(--bg);box-shadow:8px 8px 24px rgba(37,211,102,.25),-8px -8px 24px var(--shadow-light),0 0 0 3px rgba(37,211,102,.1);display:flex;align-items:center;justify-content:center;transition:var(--transition);position:relative;text-decoration:none}
+.wa-fab:hover{transform:scale(1.15) translateY(-6px);box-shadow:12px 12px 35px rgba(37,211,102,.35),-12px -12px 35px var(--shadow-light)}
+.wa-fab svg{width:32px;height:32px;fill:#25d366;transition:all .5s ease}
+.wa-fab:hover svg{opacity:0;transform:scale(.5)}
+.wa-fab .heart-morph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.3) rotate(-30deg);transition:all .5s cubic-bezier(.68,-.55,.265,1.55);pointer-events:none}
+.wa-fab:hover .heart-morph{opacity:1;transform:scale(1) rotate(0deg)}
+.heart-morph svg{width:32px;height:32px;fill:var(--rose);filter:drop-shadow(0 4px 8px rgba(160,64,80,.3))}
+.wa-badge{position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:var(--rose);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(160,64,80,.4);animation:badgePulse 2s ease-in-out infinite;border:2px solid var(--bg)}
+@keyframes badgePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.wa-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--stone);background:var(--bg);padding:6px 12px;border-radius:20px;box-shadow:3px 3px 8px var(--shadow-dark),-3px -3px 8px var(--shadow-light);opacity:0;transform:translateY(10px);transition:all .3s ease}
+.wa-fab-wrap:hover .wa-label{opacity:1;transform:translateY(0)}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:1000;background:rgba(44,24,16,.55);backdrop-filter:blur(12px);display:none;align-items:center;justify-content:center;padding:40px 20px;opacity:0;transition:opacity .3s ease}
+.modal.open{display:flex;opacity:1}
+.modal-card{background:var(--bg);max-width:920px;width:100%;display:grid;grid-template-columns:1fr 1fr;max-height:85vh;overflow:hidden;border-radius:var(--neu-radius-lg);box-shadow:24px 24px 60px rgba(160,64,80,.2),-24px -24px 60px var(--shadow-light);position:relative;transform:translateY(30px) scale(.95);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.modal.open .modal-card{transform:translateY(0) scale(1)}
+.modal-img{background:var(--bg-deep);aspect-ratio:4/5;overflow:hidden}
+.modal-img img{width:100%;height:100%;object-fit:cover}
+.modal-body{padding:40px;overflow-y:auto;display:flex;flex-direction:column}
+.modal-close{position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--bg);border:none;cursor:pointer;font-size:18px;color:var(--ink);z-index:10;box-shadow:4px 4px 10px var(--shadow-dark),-4px -4px 10px var(--shadow-light);display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+.modal-close:hover{background:var(--rose);color:#fff;transform:rotate(90deg)}
+.modal-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);margin-bottom:12px;font-weight:600}
+.modal-name{font-family:'Cinzel',serif;font-size:2rem;color:var(--rose);line-height:1.1;margin-bottom:8px}
+.modal-desc{font-size:.95rem;color:var(--stone);line-height:1.7;margin-bottom:28px}
+.modal-hint{font-size:.8rem;color:var(--stone);margin-top:16px;font-style:italic}
+.option-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:24px}
+.option-btn{padding:14px 10px;background:var(--bg);border:none;border-radius:16px;font-family:'Lato',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:1px;text-transform:uppercase;color:var(--ink);cursor:pointer;box-shadow:4px 4px 10px var(--shadow-dark),-4px -4px 10px var(--shadow-light);transition:var(--transition);display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none}
+.option-btn:hover{transform:translateY(-2px);box-shadow:6px 6px 14px var(--shadow-dark),-6px -6px 14px var(--shadow-light)}
+.option-btn .opt-stock{font-size:.7rem;color:var(--stone);font-weight:400}
+.option-btn.sold{opacity:.5;cursor:not-allowed;text-decoration:line-through}
+.option-btn.sold .opt-stock{color:var(--rose)}
+
+/* Responsive */
+@media(max-width:768px){.nav-links{display:none}.hero{padding:120px 16px 60px}.hero-content{padding:36px 24px}.catalogue-grid{grid-template-columns:1fr}.section-head{flex-direction:column;align-items:flex-start}.foot-grid{grid-template-columns:1fr 1fr;gap:40px}.modal-card{grid-template-columns:1fr;max-height:92vh;overflow-y:auto}.modal-img{aspect-ratio:1/1}.vignette-grid{grid-template-columns:1fr}.wa-fab{width:60px;height:60px}.wa-fab svg{width:28px;height:28px}.about-card{padding:40px 24px}.contact-box{padding:40px 24px}.option-grid{grid-template-columns:1fr}.footer-hero-img{padding:40px 16px 30px}.poc-banner{padding:24px 20px}}
+@media(max-width:480px){.foot-grid{grid-template-columns:1fr}.filter-btn{padding:10px 18px;font-size:.75rem}.marquee span{margin:0 20px}.hero-title{font-size:2.2rem}}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}::-webkit-scrollbar-thumb:hover{background:var(--rose-light)}
+::selection{background:rgba(160,64,80,.2);color:var(--rose)}
+</style>
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <img src="https://res.cloudinary.com/h7kbydly/image/upload/v1784139996/bg1_besqcm.webp" alt="Five Hearts Events" class="loader-logo">
+  <p class="loader-text">FIVE HEARTS</p>
+  <div class="loader-hearts">
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+  </div>
+</div>
+
+<!-- VIDEO HERO (Cloudinary Player) -->
+<div class="parallax-hero">
+  <video id="player" muted autoplay loop playsinline></video>
+</div>
+<canvas id="bg-canvas"></canvas>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <a href="#home" class="nav-brand">
+    <img src="https://res.cloudinary.com/h7kbydly/image/upload/v1784162713/Polish_20260716_022503440_sewzsr.png" alt="Five Hearts">
+    <span>Five Hearts</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#catalogue">Collection</a></li>
+    <li><a href="#vignettes">Events</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="inquiry-pill" onclick="openWA()">
+    <span class="dot"></span>
+    Inquiry Only
+  </button>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div class="hero-title">
+    <span class="line1">FIVE HEARTS</span>
+    <span class="line2">EVENTS DECOR & HIRE</span>
+    <span class="line3">We Decorate Memories. You Celebrate Life.</span>
+  </div>
+  <div class="hero-content">
+    <p class="hero-subtitle">Events Decor & Hire - Cape Town</p>
+    <p>We specialise in luxury event conceptualisation, decor styling, and design for weddings, anniversaries, birthdays, and corporate functions across Athlone, Bridgetown, and greater Cape Town. From intimate gatherings to grand celebrations - we decorate memories so you can celebrate life.</p>
+    <a href="#catalogue" class="cta-btn" onclick="spawnHearts(event)">Explore Our Collection -</a>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-inner">
+    <span>WhatsApp Inquiry Only</span>
+    <span>Serving Athlone & Bridgetown</span>
+    <span>Decor Hire July 2026 - July 2027</span>
+    <span>No Login Required - Human Response</span>
+    <span>New Collection Coming Soon</span>
+    <span>WhatsApp Inquiry Only</span>
+    <span>Serving Athlone & Bridgetown</span>
+    <span>Decor Hire July 2026 - July 2027</span>
+    <span>No Login Required - Human Response</span>
+    <span>New Collection Coming Soon</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-card">
+    <h2 class="brand-font">Our Story</h2>
+    <p>At <span class="highlight">Five Hearts Events Decor & Hire</span>, we believe that every celebration tells a story and every beautiful event becomes a treasured memory.</p>
+    <p style="margin-top:16px">Our business was born from the love of a mother and her four daughters, united by a shared passion for creating unforgettable moments for families - just like our own. What began as a love for decorating family celebrations has grown into a business dedicated to transforming life's special occasions into beautiful, lasting memories.</p>
+    <p style="margin-top:16px">In 2025, our family experienced the heartbreaking loss of our beloved father. As we reflected on the countless birthdays, anniversaries, holidays, and family gatherings we shared with him, we realised something truly special: the love, care and attention we poured into those celebrations made those memories even more meaningful.</p>
+    <p style="margin-top:16px">Inspired by those cherished memories, we founded Five Hearts with one purpose - to help other families create moments they will treasure for a lifetime. Our greatest inspiration is our mom, whose remarkable strength carried our family through one of life's most difficult seasons.</p>
+    <p style="margin-top:20px;font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);font-size:1.15rem;">"We Decorate Memories. You Celebrate Life."</p>
+  </div>
+</section>
+
+<!-- CATALOGUE -->
+<section class="catalogue" id="catalogue">
+  <div class="section-head">
+    <div>
+      <div class="section-label">The Collection</div>
+      <h2 class="section-title">Hire Items. <em>Real Inventory.</em></h2>
+    </div>
+    <div class="section-label">Live Availability - Updated July 2026</div>
+  </div>
+
+  <div class="poc-banner">
+    <span class="poc-icon">&#127919;</span>
+    <h3>This Catalogue Is a Proof of Concept</h3>
+    <p>Every item you see below represents a real piece in our growing inventory. Tap any product to enquire via WhatsApp - no login, no cart, just a direct conversation with our team. We're building this collection to show you what's possible when event decor meets personal service.</p>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-cat="all">All Items</button>
+    <button class="filter-btn" data-cat="glassware">Glassware</button>
+    <button class="filter-btn" data-cat="cutlery">Cutlery</button>
+    <button class="filter-btn" data-cat="porcelain">Porcelain</button>
+    <button class="filter-btn" data-cat="catering">Catering</button>
+    <button class="filter-btn" data-cat="display">Display</button>
+    <button class="filter-btn" data-cat="decor">Decor</button>
+    <button class="filter-btn" data-cat="furniture">Chair & Table</button>
+  </div>
+
+  <div class="catalogue-grid" id="grid">
+    <div class="card" data-cat="glassware" data-id="g1">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-candyjar.jpg" alt="Candy Jar" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Candy Jar</h3>
+        <p>Elegant glass candy jar with lid - perfect for dessert tables, sweet bars, and wedding receptions.</p>
+        <div class="card-meta">
+          <span class="card-stock">8 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('g1'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="glassware" data-id="g2">
+      <div class="card-img-wrap">
+        <div class="card-tag low">Only 4 left</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-c-cut-liquor.jpg" alt="Crystal Cut Liquor Decanter" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Crystal Cut Liquor Decanter</h3>
+        <p>Heavy-cut crystal liquor decanter with stopper. Adds sophistication to any bar setup.</p>
+        <div class="card-meta">
+          <span class="card-stock">4 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('g2'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="glassware" data-id="g3">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-dessert-bowl.jpg" alt="Dessert Bowl" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Dessert Bowl</h3>
+        <p>Clear glass dessert bowls ideal for mousse, trifle, or individual panna cotta servings.</p>
+        <div class="card-meta">
+          <span class="card-stock">24 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('g3'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="glassware" data-id="g4">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-flute.jpg" alt="Champagne Flute" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Champagne Flute</h3>
+        <p>Tall champagne flutes with elegant stem - toast in style at weddings and anniversaries.</p>
+        <div class="card-meta">
+          <span class="card-stock">48 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('g4'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="glassware" data-id="g5">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-highball.jpg" alt="Highball Glass" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Highball Glass</h3>
+        <p>Versatile highball glasses for cocktails, mocktails, and long drinks at any celebration.</p>
+        <div class="card-meta">
+          <span class="card-stock">36 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('g5'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="glassware" data-id="g6">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-jug.jpg" alt="Glass Jug" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Glass Jug</h3>
+        <p>Large glass serving jug with handle - perfect for infused water, sangria, or iced tea.</p>
+        <div class="card-meta">
+          <span class="card-stock">6 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('g6'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="glassware" data-id="g7">
+      <div class="card-img-wrap">
+        <div class="card-tag low">Only 3 left</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-juice-dispenser.jpg" alt="Juice Dispenser" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Juice Dispenser</h3>
+        <p>Glass beverage dispenser with tap - a statement piece for self-serve drink stations.</p>
+        <div class="card-meta">
+          <span class="card-stock">3 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('g7'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="glassware" data-id="g8">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-wine.jpg" alt="Wine Glass" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Wine Glass</h3>
+        <p>Classic stemmed wine glasses for red, white, or rose. Essential for any formal table setting.</p>
+        <div class="card-meta">
+          <span class="card-stock">48 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('g8'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="cutlery" data-id="c1">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-butter-knife.jpg" alt="Butter Knife" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Butter Knife</h3>
+        <p>Stainless steel butter knife with elegant handle. Part of our premium cutlery collection.</p>
+        <div class="card-meta">
+          <span class="card-stock">60 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('c1'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="cutlery" data-id="c2">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-fish-fork.jpg" alt="Fish Fork" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Fish Fork</h3>
+        <p>Specialised fish fork with delicate tines. Perfect for seafood courses and formal dining.</p>
+        <div class="card-meta">
+          <span class="card-stock">36 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('c2'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="cutlery" data-id="c3">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-fork.jpg" alt="Dinner Fork" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Dinner Fork</h3>
+        <p>Heavy-duty stainless steel dinner fork. Polished finish that complements any tablescape.</p>
+        <div class="card-meta">
+          <span class="card-stock">60 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('c3'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="cutlery" data-id="c4">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-tablespoon.jpg" alt="Tablespoon" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Tablespoon</h3>
+        <p>Generous stainless steel tablespoon for soups, stews, and shared dishes.</p>
+        <div class="card-meta">
+          <span class="card-stock">60 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('c4'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="cutlery" data-id="c5">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-teaspoons.jpg" alt="Teaspoons" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Teaspoons</h3>
+        <p>Set of elegant stainless steel teaspoons for coffee, tea, and dessert service.</p>
+        <div class="card-meta">
+          <span class="card-stock">72 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('c5'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="porcelain" data-id="p1">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-cup-saucer.jpg" alt="Cup & Saucer Set" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Cup & Saucer Set</h3>
+        <p>Fine porcelain cup and saucer with subtle gold rim. Perfect for high tea and bridal showers.</p>
+        <div class="card-meta">
+          <span class="card-stock">24 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('p1'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="porcelain" data-id="p2">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-dinner-plate.jpg" alt="Dinner Plate" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Dinner Plate</h3>
+        <p>Classic white porcelain dinner plate with gold rim detailing. Timeless elegance for any table.</p>
+        <div class="card-meta">
+          <span class="card-stock">48 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('p2'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="porcelain" data-id="p3">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-gravyboat.jpg" alt="Gravy Boat" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Gravy Boat</h3>
+        <p>Porcelain gravy boat with underplate. Serve sauces and dressings with refined style.</p>
+        <div class="card-meta">
+          <span class="card-stock">8 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('p3'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="porcelain" data-id="p4">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-side-plate.jpg" alt="Side Plate" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Side Plate</h3>
+        <p>Matching porcelain side plate for bread, starters, or dessert courses.</p>
+        <div class="card-meta">
+          <span class="card-stock">48 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('p4'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="porcelain" data-id="p5">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-teapot.jpg" alt="Teapot" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Teapot</h3>
+        <p>Elegant porcelain teapot with curved spout and lid. A centrepiece for any tea service.</p>
+        <div class="card-meta">
+          <span class="card-stock">6 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('p5'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="catering" data-id="ca1">
+      <div class="card-img-wrap">
+        <div class="card-tag low">Only 4 left</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/electric-urn.jpg" alt="Electric Urn" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Electric Urn</h3>
+        <p>Stainless steel electric urn for tea and coffee service. Keeps beverages hot throughout your event.</p>
+        <div class="card-meta">
+          <span class="card-stock">4 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('ca1'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="catering" data-id="ca2">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/catering-chafing-dish.jpg" alt="Chafing Dish" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Chafing Dish</h3>
+        <p>Professional stainless steel chafing dish with fuel holder. Keep buffet dishes warm and presentable.</p>
+        <div class="card-meta">
+          <span class="card-stock">6 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('ca2'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="catering" data-id="ca3">
+      <div class="card-img-wrap">
+        <div class="card-tag low">Only 3 left</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/catering-juice-dispenser-glass-7l.jpg" alt="Juice Dispenser (7L Glass)" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Juice Dispenser (7L Glass)</h3>
+        <p>Large 7-litre glass juice dispenser with ice core. Ideal for breakfast events and summer parties.</p>
+        <div class="card-meta">
+          <span class="card-stock">3 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('ca3'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="display" data-id="d1">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-easel-sm.jpg" alt="Display Easel (Small)" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Display Easel (Small)</h3>
+        <p>Compact wooden display easel for table numbers, menus, welcome signs, and photo displays.</p>
+        <div class="card-meta">
+          <span class="card-stock">12 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('d1'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="display" data-id="d2">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-easel-lrg.jpg" alt="Display Easel (Large)" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Display Easel (Large)</h3>
+        <p>Tall wooden display easel for entrance signage, seating charts, and large artwork.</p>
+        <div class="card-meta">
+          <span class="card-stock">6 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('d2'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="display" data-id="d3">
+      <div class="card-img-wrap">
+        <div class="card-tag low">Only 4 left</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-bench-3-tier.jpg" alt="3-Tier Display Bench" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">3-Tier Display Bench</h3>
+        <p>Wooden 3-tier display bench for cupcakes, desserts, or decorative arrangements.</p>
+        <div class="card-meta">
+          <span class="card-stock">4 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('d3'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="display" data-id="d4">
+      <div class="card-img-wrap">
+        <div class="card-tag low">Only 4 left</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-ladder-3-tier.jpg" alt="3-Tier Display Ladder" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">3-Tier Display Ladder</h3>
+        <p>Rustic wooden ladder-style 3-tier display stand. Perfect for vintage and boho-themed events.</p>
+        <div class="card-meta">
+          <span class="card-stock">4 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('d4'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="decor" data-id="de1">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-toothpick-holder-porcelain.jpg" alt="Porcelain Toothpick Holder" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Porcelain Toothpick Holder</h3>
+        <p>Delicate porcelain toothpick holder with floral detail. A subtle touch of elegance.</p>
+        <div class="card-meta">
+          <span class="card-stock">20 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('de1'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="decor" data-id="de2">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-candelabra.jpg" alt="Candelabra" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Candelabra</h3>
+        <p>Statement candelabra for dramatic table centrepieces. Holds multiple taper candles.</p>
+        <div class="card-meta">
+          <span class="card-stock">8 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('de2'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="decor" data-id="de3">
+      <div class="card-img-wrap">
+        <div class="card-tag low">Only 2 left</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-smoke-machine-disco-light.jpg" alt="Smoke Machine & Disco Light" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Smoke Machine & Disco Light</h3>
+        <p>Party essentials - smoke machine and disco light set for dance floors and celebrations.</p>
+        <div class="card-meta">
+          <span class="card-stock">2 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('de3'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="furniture" data-id="f1">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-table-cloth.jpg" alt="Table Cloth" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Table Cloth</h3>
+        <p>Premium table cloths in blush, ivory, and white. Available in multiple sizes to fit round and rectangular tables.</p>
+        <div class="card-meta">
+          <span class="card-stock">20 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('f1'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="furniture" data-id="f2">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-tablerunners.jpg" alt="Table Runners" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Table Runners</h3>
+        <p>Elegant table runners in lace, satin, and sequin finishes. Layer over cloths for added texture.</p>
+        <div class="card-meta">
+          <span class="card-stock">24 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('f2'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="furniture" data-id="f3">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-chair-basic.jpg" alt="Basic Chair" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Basic Chair</h3>
+        <p>Classic banquet chair with padded seat. Comfortable, stackable, and versatile for any event size.</p>
+        <div class="card-meta">
+          <span class="card-stock">100 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('f3'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="furniture" data-id="f4">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-chaircover.jpg" alt="Chair Cover" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Chair Cover</h3>
+        <p>Stretch chair covers in white, ivory, and black. Transform standard chairs into elegant seating.</p>
+        <div class="card-meta">
+          <span class="card-stock">80 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('f4'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="card" data-cat="furniture" data-id="f5">
+      <div class="card-img-wrap">
+        <div class="card-tag">Available</div>
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-chair-ribbon.jpg" alt="Chair Ribbon Sash" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+      </div>
+      <div class="card-body">
+        <h3 class="brand-font">Chair Ribbon Sash</h3>
+        <p>Satin and organza chair sashes in rose gold, blush, gold, and burgundy. Tie, bow, or drape.</p>
+        <div class="card-meta">
+          <span class="card-stock">100 in stock</span>
+        </div>
+        <button class="wa-enquire" onclick="openModal('f5'); spawnHearts(event);">
+          <span class="enquire-pulse"></span>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Enquire on WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="placeholder-card" data-cat="placeholder">
+      <div class="ph-icon">&#10024;</div>
+      <h4>New Item Coming Soon</h4>
+      <p>We're expanding our collection with exciting new pieces. Follow us on WhatsApp to be the first to know when they arrive!</p>
+    </div>
+    <div class="placeholder-card" data-cat="placeholder">
+      <div class="ph-icon">&#10024;</div>
+      <h4>New Item Coming Soon</h4>
+      <p>We're expanding our collection with exciting new pieces. Follow us on WhatsApp to be the first to know when they arrive!</p>
+    </div>
+    <div class="placeholder-card" data-cat="placeholder">
+      <div class="ph-icon">&#10024;</div>
+      <h4>New Item Coming Soon</h4>
+      <p>We're expanding our collection with exciting new pieces. Follow us on WhatsApp to be the first to know when they arrive!</p>
+    </div>
+    <div class="placeholder-card" data-cat="placeholder">
+      <div class="ph-icon">&#10024;</div>
+      <h4>New Item Coming Soon</h4>
+      <p>We're expanding our collection with exciting new pieces. Follow us on WhatsApp to be the first to know when they arrive!</p>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT VIGNETTES -->
+<section class="vignettes" id="vignettes">
+  <div class="section-head" style="max-width:1200px;margin:0 auto 60px;">
+    <div>
+      <div class="section-label">Event Inspiration</div>
+      <h2 class="section-title">Curated Moments. <em>Coming Soon.</em></h2>
+    </div>
+    <div class="section-label">Cape Town Styled Shoots</div>
+  </div>
+  <div class="vignette-grid">
+    <div class="vignette">
+      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80" alt="Wedding" class="vignette-img">
+      <div class="vignette-body">
+        <h3>Wedding Receptions</h3>
+        <p>From intimate chapel ceremonies to grand ballroom celebrations - our curated glassware, porcelain, and linen collections set the table for your forever.</p>
+        <a href="#contact" class="vignette-cta">Enquire Now</a>
+      </div>
+    </div>
+    <div class="vignette">
+      <img src="https://images.unsplash.com/photo-1530103862676-de3c9a59aa38?w=600&q=80" alt="Birthday" class="vignette-img">
+      <div class="vignette-body">
+        <h3>Birthday Celebrations</h3>
+        <p>Milestone birthdays deserve milestone styling. Chair covers, themed table runners, and statement centrepieces that make every year unforgettable.</p>
+        <a href="#contact" class="vignette-cta">Enquire Now</a>
+      </div>
+    </div>
+    <div class="vignette">
+      <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&q=80" alt="Corporate" class="vignette-img">
+      <div class="vignette-body">
+        <h3>Corporate Functions</h3>
+        <p>Elevate your brand events with professional-grade catering equipment, display easels, and elegant table settings that impress clients and teams alike.</p>
+        <a href="#contact" class="vignette-cta">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-head" style="margin-bottom:50px;">
+    <div>
+      <div class="section-label">Questions</div>
+      <h2 class="section-title">What People <em>Ask.</em></h2>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      How does the hire process work?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Simply browse our collection, tap the WhatsApp button on any item, and send us your event date, venue, and the pieces you love. We reply within hours with availability, a personalised quote, and delivery options. No login, no cart - just a conversation.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      What areas do you serve in Cape Town?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>We are based in Athlone and primarily serve Bridgetown, Athlone, and surrounding Cape Town areas. Delivery and collection can be arranged for most locations within the greater Cape Town region.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      Do you offer setup and styling services?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>From July 2026 until July 2027, we are offering decor and event hire services only. You are welcome to style your own way or work with your preferred decorator using our curated collection.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      Is there a minimum order value?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>There is no strict minimum - whether you need a single statement piece or a complete collection for 200 guests, we are here to help. Every enquiry is treated with the same care and attention to detail.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      How far in advance should I book?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>We recommend booking at least 4-6 weeks in advance for weddings and large events, and 2-3 weeks for smaller gatherings. Peak season (November-January) fills up quickly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-box">
+    <h2 class="brand-font">Let's Create Magic Together</h2>
+    <p>Ready to transform your venue? Send us a message on WhatsApp with your event date, venue, and vision - we'll respond with a personalised quote within hours. Based in Athlone, serving Bridgetown and all of Cape Town.</p>
+    <a href="https://wa.me/27825468606?text=Hello%20Five%20Hearts%2C%20I%20would%20like%20to%20enquire%20about%20decor%20hire%20for%20my%20upcoming%20event%20in%20Cape%20Town." 
+       class="wa-main-btn" target="_blank" rel="noopener noreferrer" onclick="spawnHearts(event)">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Chat on WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/herotxt1_yjqtr8.webp" alt="Five Hearts Events Decor & Hire" class="footer-hero-img">
+  <div class="footer-bg"></div>
+  <div class="footer-glass"></div>
+  <div class="footer-content">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Five Hearts</div>
+        <p class="foot-desc">A family-run event decor hire business based in Athlone, Cape Town. Hosted with care. Conducted via WhatsApp for personal service. Every piece tells a story.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Inquire</h4>
+        <a href="https://wa.me/27825468606" target="_blank">+27 82 546 8606</a>
+        <a href="#contact">Book A Consultation</a>
+        <a href="#catalogue">View Collection</a>
+      </div>
+      <div class="foot-col">
+        <h4>Service Areas</h4>
+        <a href="#">Athlone</a>
+        <a href="#">Bridgetown</a>
+        <a href="#">Greater Cape Town</a>
+      </div>
+      <div class="foot-col">
+        <h4>Info</h4>
+        <a href="#about">Our Story</a>
+        <a href="#faq">FAQ</a>
+        <a href="#vignettes">Event Ideas</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; 2026 Five Hearts Events Decor & Hire - All Rights Reserved</div>
+      <div>Cape Town, South Africa - v2.0</div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FAB -->
+<div class="wa-fab-wrap">
+  <div class="wa-label">Enquire</div>
+  <a href="https://wa.me/27825468606?text=Hello%20Five%20Hearts%2C%20I%20would%20like%20to%20enquire%20about%20decor%20hire." 
+     class="wa-fab" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" onclick="spawnHearts(event)">
+    <span class="wa-badge" id="waBadge">0</span>
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <div class="heart-morph">
+      <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </div>
+  </a>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()">&#10005;</button>
+    <div class="modal-img"><img id="m-img" src="" alt=""></div>
+    <div class="modal-body">
+      <div class="modal-tag" id="m-tag"></div>
+      <h3 class="modal-name" id="m-name"></h3>
+      <p class="modal-desc" id="m-desc"></p>
+      <div class="option-grid" id="m-options"></div>
+      <a href="#" class="wa-main-btn" id="m-wa" target="_blank" rel="noopener" style="width:100%;justify-content:center;">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Enquire on WhatsApp
+      </a>
+      <p class="modal-hint">Every tap opens a private chat. We respond within hours with availability and pricing.</p>
+    </div>
+  </div>
+</div>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Five Hearts Events Decor & Hire",
+  "image": "https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp",
+  "telephone": "+27825468606",
+  "url": "https://fiveheartsevents.co.za",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Athlone",
+    "addressRegion": "Western Cape",
+    "addressCountry": "ZA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -33.9631,
+    "longitude": 18.5083
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Cape Town",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "Western Cape"
+    }
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "telephone": "+27825468606",
+    "areaServed": "ZA",
+    "availableLanguage": ["en-ZA"],
+    "url": "https://wa.me/27825468606"
+  },
+  "sameAs": ["https://wa.me/27825468606"],
+  "priceRange": "$$",
+  "openingHours": "Mo-Sa 08:00-18:00",
+  "description": "Family-run event decor hire business in Athlone, Cape Town. Glassware, cutlery, porcelain, catering equipment, chairs, tables, and floral decor for weddings, birthdays, and corporate events."
+}
+</script>
+
+<!-- GA4 Placeholder -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+
+<script>
+/* CONFIG */
+const WA_NUMBER = "27825468606";
+const WA_BASE = `https://wa.me/${WA_NUMBER}?text=`;
+
+/* PRODUCT DATA FOR MODAL */
+const catalogue = {
+  g1:{name:"Candy Jar",cat:"glassware",stock:8,desc:"Elegant glass candy jar with lid - perfect for dessert tables, sweet bars, and wedding receptions.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-candyjar.jpg"},
+  g2:{name:"Crystal Cut Liquor Decanter",cat:"glassware",stock:4,desc:"Heavy-cut crystal liquor decanter with stopper. Adds sophistication to any bar setup.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-c-cut-liquor.jpg"},
+  g3:{name:"Dessert Bowl",cat:"glassware",stock:24,desc:"Clear glass dessert bowls ideal for mousse, trifle, or individual panna cotta servings.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-dessert-bowl.jpg"},
+  g4:{name:"Champagne Flute",cat:"glassware",stock:48,desc:"Tall champagne flutes with elegant stem - toast in style at weddings and anniversaries.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-flute.jpg"},
+  g5:{name:"Highball Glass",cat:"glassware",stock:36,desc:"Versatile highball glasses for cocktails, mocktails, and long drinks at any celebration.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-highball.jpg"},
+  g6:{name:"Glass Jug",cat:"glassware",stock:6,desc:"Large glass serving jug with handle - perfect for infused water, sangria, or iced tea.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-jug.jpg"},
+  g7:{name:"Juice Dispenser",cat:"glassware",stock:3,desc:"Glass beverage dispenser with tap - a statement piece for self-serve drink stations.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-juice-dispenser.jpg"},
+  g8:{name:"Wine Glass",cat:"glassware",stock:48,desc:"Classic stemmed wine glasses for red, white, or rose. Essential for any formal table setting.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-wine.jpg"},
+  c1:{name:"Butter Knife",cat:"cutlery",stock:60,desc:"Stainless steel butter knife with elegant handle. Part of our premium cutlery collection.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-butter-knife.jpg"},
+  c2:{name:"Fish Fork",cat:"cutlery",stock:36,desc:"Specialised fish fork with delicate tines. Perfect for seafood courses and formal dining.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-fish-fork.jpg"},
+  c3:{name:"Dinner Fork",cat:"cutlery",stock:60,desc:"Heavy-duty stainless steel dinner fork. Polished finish that complements any tablescape.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-fork.jpg"},
+  c4:{name:"Tablespoon",cat:"cutlery",stock:60,desc:"Generous stainless steel tablespoon for soups, stews, and shared dishes.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-tablespoon.jpg"},
+  c5:{name:"Teaspoons",cat:"cutlery",stock:72,desc:"Set of elegant stainless steel teaspoons for coffee, tea, and dessert service.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-teaspoons.jpg"},
+  p1:{name:"Cup & Saucer Set",cat:"porcelain",stock:24,desc:"Fine porcelain cup and saucer with subtle gold rim. Perfect for high tea and bridal showers.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-cup-saucer.jpg"},
+  p2:{name:"Dinner Plate",cat:"porcelain",stock:48,desc:"Classic white porcelain dinner plate with gold rim detailing. Timeless elegance for any table.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-dinner-plate.jpg"},
+  p3:{name:"Gravy Boat",cat:"porcelain",stock:8,desc:"Porcelain gravy boat with underplate. Serve sauces and dressings with refined style.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-gravyboat.jpg"},
+  p4:{name:"Side Plate",cat:"porcelain",stock:48,desc:"Matching porcelain side plate for bread, starters, or dessert courses.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-side-plate.jpg"},
+  p5:{name:"Teapot",cat:"porcelain",stock:6,desc:"Elegant porcelain teapot with curved spout and lid. A centrepiece for any tea service.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-teapot.jpg"},
+  ca1:{name:"Electric Urn",cat:"catering",stock:4,desc:"Stainless steel electric urn for tea and coffee service. Keeps beverages hot throughout your event.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/electric-urn.jpg"},
+  ca2:{name:"Chafing Dish",cat:"catering",stock:6,desc:"Professional stainless steel chafing dish with fuel holder. Keep buffet dishes warm and presentable.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/catering-chafing-dish.jpg"},
+  ca3:{name:"Juice Dispenser (7L Glass)",cat:"catering",stock:3,desc:"Large 7-litre glass juice dispenser with ice core. Ideal for breakfast events and summer parties.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/catering-juice-dispenser-glass-7l.jpg"},
+  d1:{name:"Display Easel (Small)",cat:"display",stock:12,desc:"Compact wooden display easel for table numbers, menus, welcome signs, and photo displays.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-easel-sm.jpg"},
+  d2:{name:"Display Easel (Large)",cat:"display",stock:6,desc:"Tall wooden display easel for entrance signage, seating charts, and large artwork.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-easel-lrg.jpg"},
+  d3:{name:"3-Tier Display Bench",cat:"display",stock:4,desc:"Wooden 3-tier display bench for cupcakes, desserts, or decorative arrangements.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-bench-3-tier.jpg"},
+  d4:{name:"3-Tier Display Ladder",cat:"display",stock:4,desc:"Rustic wooden ladder-style 3-tier display stand. Perfect for vintage and boho-themed events.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-ladder-3-tier.jpg"},
+  de1:{name:"Porcelain Toothpick Holder",cat:"decor",stock:20,desc:"Delicate porcelain toothpick holder with floral detail. A subtle touch of elegance.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-toothpick-holder-porcelain.jpg"},
+  de2:{name:"Candelabra",cat:"decor",stock:8,desc:"Statement candelabra for dramatic table centrepieces. Holds multiple taper candles.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-candelabra.jpg"},
+  de3:{name:"Smoke Machine & Disco Light",cat:"decor",stock:2,desc:"Party essentials - smoke machine and disco light set for dance floors and celebrations.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-smoke-machine-disco-light.jpg"},
+  f1:{name:"Table Cloth",cat:"furniture",stock:20,desc:"Premium table cloths in blush, ivory, and white. Available in multiple sizes to fit round and rectangular tables.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-table-cloth.jpg"},
+  f2:{name:"Table Runners",cat:"furniture",stock:24,desc:"Elegant table runners in lace, satin, and sequin finishes. Layer over cloths for added texture.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-tablerunners.jpg"},
+  f3:{name:"Basic Chair",cat:"furniture",stock:100,desc:"Classic banquet chair with padded seat. Comfortable, stackable, and versatile for any event size.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-chair-basic.jpg"},
+  f4:{name:"Chair Cover",cat:"furniture",stock:80,desc:"Stretch chair covers in white, ivory, and black. Transform standard chairs into elegant seating.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-chaircover.jpg"},
+  f5:{name:"Chair Ribbon Sash",cat:"furniture",stock:100,desc:"Satin and organza chair sashes in rose gold, blush, gold, and burgundy. Tie, bow, or drape.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-chair-ribbon.jpg"}
+};
+
+/* FILTER FUNCTION */
+function filterCards(category) {
+  const cards = document.querySelectorAll('.card');
+  const placeholders = document.querySelectorAll('.placeholder-card');
+
+  cards.forEach(card => {
+    if (category === 'all' || card.dataset.cat === category) {
+      card.style.display = '';
+      gsap.fromTo(card, {opacity:0, y:30}, {opacity:1, y:0, duration:0.4});
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  placeholders.forEach(ph => {
+    if (category === 'all') {
+      ph.style.display = '';
+    } else {
+      ph.style.display = 'none';
+    }
+  });
+}
+
+/* Filter buttons */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterCards(btn.dataset.cat);
+  });
+});
+
+/* MODAL */
+let enquiryCount = 0;
+
+function openModal(productId) {
+  const item = catalogue[productId];
+  if (!item) return;
+
+  document.getElementById('m-img').src = item.img;
+  document.getElementById('m-tag').textContent = item.cat.toUpperCase() + ' - ' + item.stock + ' Available';
+  document.getElementById('m-name').textContent = item.name;
+  document.getElementById('m-desc').textContent = item.desc;
+
+  const msg = `Hello Five Hearts! \n\nI'm interested in hiring:\n📌 *${item.name}*\nCategory: ${item.cat}\nStock: ${item.stock} available\n\nPlease share availability and pricing for my upcoming event in Cape Town. Thank you!`;
+  document.getElementById('m-wa').href = WA_BASE + encodeURIComponent(msg);
+
+  const opts = ['Hire 10+', 'Hire 25+', 'Hire 50+', 'Hire 100+'];
+  const optHTML = opts.map((opt, i) => {
+    const qty = [10, 25, 50, 100][i];
+    const available = item.stock >= qty;
+    const cls = available ? 'option-btn' : 'option-btn sold';
+    const stockTxt = available ? 'Available' : 'Limited';
+    const qMsg = `Hello Five Hearts! \n\nI'm interested in hiring *${item.name}* for approximately ${qty} units.\n\nPlease confirm availability and pricing. Thank you!`;
+    return available 
+      ? `<a class="${cls}" href="${WA_BASE}${encodeURIComponent(qMsg)}" target="_blank" rel="noopener" style="text-decoration:none">${opt}<span class="opt-stock">${stockTxt}</span></a>`
+      : `<button class="${cls}" disabled>${opt}<span class="opt-stock">Check First</span></button>`;
+  }).join('');
+  document.getElementById('m-options').innerHTML = optHTML;
+
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  enquiryCount++;
+  document.getElementById('waBadge').textContent = enquiryCount;
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modal').addEventListener('click', e => {
+  if (e.target.id === 'modal') closeModal();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+/* FAQ ACCORDION */
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isActive = item.classList.contains('active');
+  document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('active'));
+  document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+  if (!isActive) {
+    item.classList.add('active');
+    btn.querySelector('.faq-icon').textContent = '−';
+  }
+}
+
+/* FLOATING HEARTS */
+function spawnHearts(e) {
+  if (e && e.target && !e.target.href) e.preventDefault();
+  const hearts = ['♥', '♡', '💖', '💕', '💗'];
+  const colors = ['#a04050', '#d4af37', '#c97b84', '#e8b4b8', '#f4e5bc'];
+
+  for (let i = 0; i < 6; i++) {
+    setTimeout(() => {
+      const heart = document.createElement('div');
+      heart.className = 'heart-float';
+      heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+      heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+      const x = e && e.clientX ? e.clientX : window.innerWidth - 60;
+      const y = e && e.clientY ? e.clientY : window.innerHeight - 60;
+
+      heart.style.left = (x + (Math.random() - 0.5) * 60) + 'px';
+      heart.style.top = (y + (Math.random() - 0.5) * 40) + 'px';
+      heart.style.fontSize = (16 + Math.random() * 16) + 'px';
+      heart.style.animationDuration = (1 + Math.random() * 0.8) + 's';
+
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 1500);
+    }, i * 100);
+  }
+
+  if (e && e.target && e.target.href && e.target.tagName === 'A') {
+    setTimeout(() => window.open(e.target.href, '_blank'), 300);
+  }
+}
+
+/* HOVER "TOOLTIP" HEART - single heart appears above the button on hover,
+   like a tooltip, instead of any time-based (setTimeout/setInterval) trigger.
+   Fires once per hover-in via CSS-driven fade, not a repeating timer. */
+function spawnHeartHint(e) {
+  const btn = e.currentTarget;
+  if (btn.querySelector('.heart-hint')) return;
+  const hint = document.createElement('span');
+  hint.className = 'heart-hint';
+  hint.textContent = '♥';
+  btn.appendChild(hint);
+  requestAnimationFrame(() => hint.classList.add('show'));
+  btn.addEventListener('mouseleave', () => hint.remove(), { once: true });
+}
+document.querySelectorAll('.cta-btn, .wa-enquire, .wa-fab').forEach(btn => {
+  btn.addEventListener('mouseenter', spawnHeartHint);
+});
+
+/* CLOUDINARY HERO VIDEO PLAYER */
+const player = cloudinary.videoPlayer('player', {
+  cloudName: 'h7kbydly',
+  publicId: 'heromov1_qujv4l',
+  muted: true,
+  autoplay: true,
+  loop: true,
+  controls: false,
+  fluid: true
+});
+
+/* LOADING SCREEN */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const loader = document.getElementById('loader');
+    loader.style.opacity = '0';
+    loader.style.visibility = 'hidden';
+    initAnimations();
+  }, 3000);
+});
+
+/* PARALLAX */
+window.addEventListener('scroll', () => {
+  const scrolled = window.pageYOffset;
+  const parallax = document.querySelector('.parallax-hero');
+  if (parallax) parallax.style.transform = `translateY(${scrolled * 0.4}px)`;
+});
+
+/* NAV SCROLL */
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 50) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+/* THREE.JS BACKGROUND */
+(function() {
+  const canvas = document.getElementById('bg-canvas');
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  const geo = new THREE.BufferGeometry();
+  const count = 1500;
+  const pos = new Float32Array(count * 3);
+  const colors = new Float32Array(count * 3);
+  for (let i = 0; i < count; i++) {
+    pos[i*3] = (Math.random()-0.5)*50;
+    pos[i*3+1] = (Math.random()-0.5)*50;
+    pos[i*3+2] = (Math.random()-0.5)*50;
+    const r = 0.75 + Math.random()*0.25;
+    const g = 0.45 + Math.random()*0.25;
+    const b = 0.5 + Math.random()*0.2;
+    colors[i*3]=r; colors[i*3+1]=g; colors[i*3+2]=b;
+  }
+  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+  const mat = new THREE.PointsMaterial({ size: 0.07, vertexColors: true, transparent: true, opacity: 0.6 });
+  const pts = new THREE.Points(geo, mat);
+  scene.add(pts);
+  camera.position.z = 8;
+
+  function animate() {
+    requestAnimationFrame(animate);
+    pts.rotation.y += 0.0006;
+    pts.rotation.x += 0.0003;
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+})();
+
+/* GSAP ANIMATIONS */
+function initAnimations() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from('.hero-title', { opacity: 0, y: 40, duration: 1, delay: 0.5 });
+  gsap.from('.hero-content', { opacity: 0, y: 50, duration: 1, delay: 0.8 });
+  gsap.from('.about-card', { opacity: 0, y: 60, duration: 1, scrollTrigger: { trigger: '.about', start: 'top 80%', once: true, invalidateOnRefresh: true } });
+  gsap.from('.poc-banner', { opacity: 0, y: 30, duration: 0.8, scrollTrigger: { trigger: '.poc-banner', start: 'top 85%', once: true, invalidateOnRefresh: true } });
+  /* Option 1 fix (confirmed 16 Jul 2026): ScrollTrigger removed from .card.
+     Root cause: gsap.from() applied opacity:0 to all cards on page load; the reveal
+     depended on ScrollTrigger firing at '#grid top 85%'. Lazy-loaded product images
+     shifted document height after calculation, so the trigger point was frequently
+     missed and cards stayed permanently invisible while remaining clickable.
+     Visibility for cards is now handled purely by the existing CSS onload fade
+     (opacity:0 -> 1 per <img onload>), which cannot get stuck. */
+  gsap.set('.card', { clearProps: 'opacity,transform' });
+  gsap.from('.vignette', { opacity: 0, y: 50, duration: 0.8, stagger: 0.15, scrollTrigger: { trigger: '.vignettes', start: 'top 80%', once: true, invalidateOnRefresh: true } });
+  gsap.from('.faq-item', { opacity: 0, x: -30, duration: 0.6, stagger: 0.1, scrollTrigger: { trigger: '.faq', start: 'top 80%', once: true, invalidateOnRefresh: true } });
+  gsap.from('.contact-box', { opacity: 0, y: 50, duration: 1, scrollTrigger: { trigger: '.contact', start: 'top 80%', once: true, invalidateOnRefresh: true } });
+
+  /* Global safety net: recalculate all trigger positions once every image
+     (lazy or not) has finished loading, so no section can be stranded at
+     opacity:0 due to a layout shift that happened before its own trigger fired. */
+  window.addEventListener('load', () => setTimeout(() => ScrollTrigger.refresh(), 300));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+/* UTILITIES */
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function openWA() {
+  window.open(`https://wa.me/${WA_NUMBER}?text=Hello%20Five%20Hearts%2C%20I%20would%20like%20to%20enquire%20about%20decor%20hire.`, '_blank', 'noopener,noreferrer');
+}
+</script>
+</body>
+</html>
