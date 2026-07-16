@@ -27,11 +27,11 @@ h1,h2,h3,h4,h5,h6,.brand-font{font-family:'Cinzel',serif}.serif-font{font-family
 
 /* Loader */
 #loader{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#fdf2f4,#f5e6ea);display:flex;flex-direction:column;justify-content:center;align-items:center;transition:opacity 1s ease,visibility 1s}
-.loader-logo{width:280px;max-width:80vw;height:auto;animation:loaderBreathe 3s ease-in-out infinite;filter:drop-shadow(0 20px 60px rgba(160,64,80,.2))}
+.loader-logo{width:140px;max-width:45vw;height:auto;animation:loaderBreathe 3s ease-in-out infinite;filter:drop-shadow(0 12px 30px rgba(160,64,80,.15))}
 @keyframes loaderBreathe{0%,100%{transform:scale(1) translateY(0);opacity:.9}50%{transform:scale(1.03) translateY(-8px);opacity:1}}
-.loader-text{margin-top:30px;font-family:'Cinzel',serif;font-size:1.5rem;letter-spacing:8px;color:var(--rose);font-weight:700;animation:shimmerText 2.5s ease-in-out infinite;background:linear-gradient(90deg,var(--rose),var(--gold),var(--rose));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.loader-hearts{display:flex;gap:14px;margin-top:24px}
-.loader-hearts span{color:var(--rose);font-size:1.1rem;opacity:0;animation:loaderHeartFloat 1.8s ease-in-out infinite}
+.loader-text{margin-top:18px;font-family:'Cinzel',serif;font-size:1.05rem;letter-spacing:6px;color:var(--rose);font-weight:700;animation:shimmerText 2.5s ease-in-out infinite;background:linear-gradient(90deg,var(--rose),var(--gold),var(--rose));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.loader-hearts{display:flex;gap:10px;margin-top:16px}
+.loader-hearts span{color:var(--rose);font-size:.85rem;opacity:0;animation:loaderHeartFloat 1.8s ease-in-out infinite}
 .loader-hearts span:nth-child(1){animation-delay:0s}
 .loader-hearts span:nth-child(2){animation-delay:.15s}
 .loader-hearts span:nth-child(3){animation-delay:.3s}
@@ -119,7 +119,11 @@ nav.scrolled{background:rgba(240,230,232,.95);box-shadow:0 4px 30px rgba(160,64,
 .filter-btn{padding:12px 26px;background:var(--bg);color:var(--ink);border:none;border-radius:50px;font-family:'Lato',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:var(--transition);box-shadow:5px 5px 12px var(--shadow-dark),-5px -5px 12px var(--shadow-light)}
 .filter-btn:hover{transform:translateY(-2px);box-shadow:7px 7px 18px var(--shadow-dark),-7px -7px 18px var(--shadow-light)}
 .filter-btn.active{color:var(--rose);box-shadow:inset 4px 4px 8px var(--shadow-dark),inset -4px -4px 8px var(--shadow-light)}
-.catalogue-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:36px}
+.catalogue-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));grid-auto-flow:dense;gap:22px;align-items:start}
+.catalogue-grid .card:nth-child(8n+1){grid-column:span 2}
+.catalogue-grid .card:nth-child(8n+7){grid-column:span 2}
+.catalogue-grid .card:nth-child(8n+1) .card-img-wrap,
+.catalogue-grid .card:nth-child(8n+7) .card-img-wrap{aspect-ratio:8/5}
 
 /* Product Card */
 .card{background:var(--bg);border-radius:var(--neu-radius);overflow:hidden;box-shadow:12px 12px 30px var(--shadow-dark),-12px -12px 30px var(--shadow-light);transition:var(--transition);cursor:pointer;position:relative}
@@ -353,7 +357,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="glassware" data-id="g1">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-candyjar.jpg" alt="Candy Jar" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-candyjar.jpg" alt="Candy Jar" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Candy Jar</h3>
@@ -371,7 +375,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="glassware" data-id="g2">
       <div class="card-img-wrap">
         <div class="card-tag low">Only 4 left</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-c-cut-liquor.jpg" alt="Crystal Cut Liquor Decanter" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-c-cut-liquor.jpg" alt="Crystal Cut Liquor Decanter" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Crystal Cut Liquor Decanter</h3>
@@ -389,7 +393,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="glassware" data-id="g3">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-dessert-bowl.jpg" alt="Dessert Bowl" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-dessert-bowl.jpg" alt="Dessert Bowl" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Dessert Bowl</h3>
@@ -407,7 +411,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="glassware" data-id="g4">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-flute.jpg" alt="Champagne Flute" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-flute.jpg" alt="Champagne Flute" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Champagne Flute</h3>
@@ -425,7 +429,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="glassware" data-id="g5">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-highball.jpg" alt="Highball Glass" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-highball.jpg" alt="Highball Glass" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Highball Glass</h3>
@@ -443,7 +447,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="glassware" data-id="g6">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-jug.jpg" alt="Glass Jug" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-jug.jpg" alt="Glass Jug" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Glass Jug</h3>
@@ -461,7 +465,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="glassware" data-id="g7">
       <div class="card-img-wrap">
         <div class="card-tag low">Only 3 left</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-juice-dispenser.jpg" alt="Juice Dispenser" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-juice-dispenser.jpg" alt="Juice Dispenser" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Juice Dispenser</h3>
@@ -479,7 +483,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="glassware" data-id="g8">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-wine.jpg" alt="Wine Glass" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/glass-wine.jpg" alt="Wine Glass" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Wine Glass</h3>
@@ -497,7 +501,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="cutlery" data-id="c1">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-butter-knife.jpg" alt="Butter Knife" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-butter-knife.jpg" alt="Butter Knife" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Butter Knife</h3>
@@ -515,7 +519,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="cutlery" data-id="c2">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-fish-fork.jpg" alt="Fish Fork" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-fish-fork.jpg" alt="Fish Fork" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Fish Fork</h3>
@@ -533,7 +537,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="cutlery" data-id="c3">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-fork.jpg" alt="Dinner Fork" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-fork.jpg" alt="Dinner Fork" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Dinner Fork</h3>
@@ -551,7 +555,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="cutlery" data-id="c4">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-tablespoon.jpg" alt="Tablespoon" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-tablespoon.jpg" alt="Tablespoon" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Tablespoon</h3>
@@ -569,7 +573,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="cutlery" data-id="c5">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-teaspoons.jpg" alt="Teaspoons" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-teaspoons.jpg" alt="Teaspoons" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Teaspoons</h3>
@@ -587,7 +591,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="porcelain" data-id="p1">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-cup-saucer.jpg" alt="Cup & Saucer Set" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-cup-saucer.jpg" alt="Cup & Saucer Set" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Cup & Saucer Set</h3>
@@ -605,7 +609,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="porcelain" data-id="p2">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-dinner-plate.jpg" alt="Dinner Plate" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-dinner-plate.jpg" alt="Dinner Plate" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Dinner Plate</h3>
@@ -623,7 +627,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="porcelain" data-id="p3">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-gravyboat.jpg" alt="Gravy Boat" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-gravyboat.jpg" alt="Gravy Boat" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Gravy Boat</h3>
@@ -641,7 +645,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="porcelain" data-id="p4">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-side-plate.jpg" alt="Side Plate" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-side-plate.jpg" alt="Side Plate" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Side Plate</h3>
@@ -659,7 +663,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="porcelain" data-id="p5">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-teapot.jpg" alt="Teapot" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-teapot.jpg" alt="Teapot" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Teapot</h3>
@@ -677,7 +681,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="catering" data-id="ca1">
       <div class="card-img-wrap">
         <div class="card-tag low">Only 4 left</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/electric-urn.jpg" alt="Electric Urn" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/electric-urn.jpg" alt="Electric Urn" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Electric Urn</h3>
@@ -695,7 +699,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="catering" data-id="ca2">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/catering-chafing-dish.jpg" alt="Chafing Dish" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/catering-chafing-dish.jpg" alt="Chafing Dish" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Chafing Dish</h3>
@@ -713,7 +717,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="catering" data-id="ca3">
       <div class="card-img-wrap">
         <div class="card-tag low">Only 3 left</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/catering-juice-dispenser-glass-7l.jpg" alt="Juice Dispenser (7L Glass)" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/catering-juice-dispenser-glass-7l.jpg" alt="Juice Dispenser (7L Glass)" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Juice Dispenser (7L Glass)</h3>
@@ -731,7 +735,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="display" data-id="d1">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-easel-sm.jpg" alt="Display Easel (Small)" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-easel-sm.jpg" alt="Display Easel (Small)" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Display Easel (Small)</h3>
@@ -749,7 +753,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="display" data-id="d2">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-easel-lrg.jpg" alt="Display Easel (Large)" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-easel-lrg.jpg" alt="Display Easel (Large)" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Display Easel (Large)</h3>
@@ -767,7 +771,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="display" data-id="d3">
       <div class="card-img-wrap">
         <div class="card-tag low">Only 4 left</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-bench-3-tier.jpg" alt="3-Tier Display Bench" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-bench-3-tier.jpg" alt="3-Tier Display Bench" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">3-Tier Display Bench</h3>
@@ -785,7 +789,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="display" data-id="d4">
       <div class="card-img-wrap">
         <div class="card-tag low">Only 4 left</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-ladder-3-tier.jpg" alt="3-Tier Display Ladder" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-ladder-3-tier.jpg" alt="3-Tier Display Ladder" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">3-Tier Display Ladder</h3>
@@ -803,7 +807,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="decor" data-id="de1">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-toothpick-holder-porcelain.jpg" alt="Porcelain Toothpick Holder" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-toothpick-holder-porcelain.jpg" alt="Porcelain Toothpick Holder" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Porcelain Toothpick Holder</h3>
@@ -821,7 +825,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="decor" data-id="de2">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-candelabra.jpg" alt="Candelabra" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-candelabra.jpg" alt="Candelabra" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Candelabra</h3>
@@ -839,7 +843,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="decor" data-id="de3">
       <div class="card-img-wrap">
         <div class="card-tag low">Only 2 left</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-smoke-machine-disco-light.jpg" alt="Smoke Machine & Disco Light" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-smoke-machine-disco-light.jpg" alt="Smoke Machine & Disco Light" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Smoke Machine & Disco Light</h3>
@@ -857,7 +861,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="furniture" data-id="f1">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-table-cloth.jpg" alt="Table Cloth" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-table-cloth.jpg" alt="Table Cloth" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Table Cloth</h3>
@@ -875,7 +879,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="furniture" data-id="f2">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-tablerunners.jpg" alt="Table Runners" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-tablerunners.jpg" alt="Table Runners" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Table Runners</h3>
@@ -893,7 +897,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="furniture" data-id="f3">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-chair-basic.jpg" alt="Basic Chair" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-chair-basic.jpg" alt="Basic Chair" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Basic Chair</h3>
@@ -911,7 +915,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="furniture" data-id="f4">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-chaircover.jpg" alt="Chair Cover" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-chaircover.jpg" alt="Chair Cover" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Chair Cover</h3>
@@ -929,7 +933,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="furniture" data-id="f5">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-chair-ribbon.jpg" alt="Chair Ribbon Sash" loading="lazy" onerror="this.src='https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-chair-ribbon.jpg" alt="Chair Ribbon Sash" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Chair Ribbon Sash</h3>
@@ -1158,7 +1162,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Five Hearts Events Decor & Hire",
-  "image": "https://res.cloudinary.com/h7kbydly/image/upload/v1784139997/hero1_nadhhf.webp",
+  "image": "https://res.cloudinary.com/h7kbydly/image/upload/v1784162713/Polish_20260716_022503440_sewzsr.png",
   "telephone": "+27825468606",
   "url": "https://fiveheartsevents.co.za",
   "address": {
