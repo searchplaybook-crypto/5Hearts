@@ -26,12 +26,12 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--ink);overflo
 h1,h2,h3,h4,h5,h6,.brand-font{font-family:'Cinzel',serif}.serif-font{font-family:'Playfair Display',serif}
 
 /* Loader */
-#loader{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#fdf2f4,#f5e6ea);display:flex;flex-direction:column;justify-content:center;align-items:center;transition:opacity 1s ease,visibility 1s}
-.loader-logo{width:140px;max-width:45vw;height:auto;animation:loaderBreathe 3s ease-in-out infinite;filter:drop-shadow(0 12px 30px rgba(160,64,80,.15))}
-@keyframes loaderBreathe{0%,100%{transform:scale(1) translateY(0);opacity:.9}50%{transform:scale(1.03) translateY(-8px);opacity:1}}
-.loader-text{margin-top:18px;font-family:'Cinzel',serif;font-size:1.05rem;letter-spacing:6px;color:var(--rose);font-weight:700;animation:shimmerText 2.5s ease-in-out infinite;background:linear-gradient(90deg,var(--rose),var(--gold),var(--rose));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.loader-hearts{display:flex;gap:10px;margin-top:16px}
-.loader-hearts span{color:var(--rose);font-size:.85rem;opacity:0;animation:loaderHeartFloat 1.8s ease-in-out infinite}
+#loader{position:fixed;inset:0;z-index:9999;overflow:hidden;background:#2c1810;display:flex;justify-content:center;align-items:center;transition:opacity 1s ease,visibility 1s}
+#loaderPlayer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.loader-overlay{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:30px 50px;background:rgba(44,24,16,.35);backdrop-filter:blur(6px);border-radius:var(--neu-radius-lg)}
+.loader-text{margin-top:0;font-family:'Cinzel',serif;font-size:2.4rem;letter-spacing:10px;color:var(--gold-light);font-weight:700;animation:shimmerText 2.5s ease-in-out infinite;background:linear-gradient(90deg,var(--gold-light),var(--gold),var(--gold-light));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-shadow:0 4px 20px rgba(0,0,0,.3)}
+.loader-hearts{display:flex;gap:16px;margin-top:22px}
+.loader-hearts span{color:var(--gold-light);font-size:1.5rem;opacity:0;animation:loaderHeartFloat 1.8s ease-in-out infinite;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4))}
 .loader-hearts span:nth-child(1){animation-delay:0s}
 .loader-hearts span:nth-child(2){animation-delay:.15s}
 .loader-hearts span:nth-child(3){animation-delay:.3s}
@@ -42,7 +42,7 @@ h1,h2,h3,h4,h5,h6,.brand-font{font-family:'Cinzel',serif}.serif-font{font-family
 
 /* Video Hero (replaces static parallax image) */
 .parallax-hero{position:fixed;top:0;left:0;width:100%;height:120%;z-index:-3;overflow:hidden;will-change:transform;background:#2c1810}
-.parallax-hero video,.parallax-hero .cld-video-player{width:100%;height:100%;object-fit:cover}
+.hero-bg-img{width:100%;height:100%;object-fit:cover}
 #bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;pointer-events:none}
 
 /* Nav */
@@ -72,11 +72,6 @@ nav.scrolled{background:rgba(240,230,232,.95);box-shadow:0 4px 30px rgba(160,64,
 /* Hero */
 .hero{min-height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:140px 20px 80px;text-align:center;overflow:hidden}
 @keyframes heroLogoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.hero-title{font-family:'Cinzel',serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:700;line-height:1.05;letter-spacing:4px;margin-bottom:8px;position:relative}
-.hero-title .line1{display:block;background:linear-gradient(135deg,#8b1e3f 0%,#a04050 40%,#d4af37 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(2px 2px 0px rgba(139,30,63,.3)) drop-shadow(4px 4px 0px rgba(212,175,55,.15));animation:titleShimmer 4s ease-in-out infinite;background-size:200% auto}
-.hero-title .line2{display:block;font-size:.45em;letter-spacing:6px;font-weight:600;color:var(--gold);margin-top:10px;text-shadow:1px 1px 2px rgba(212,175,55,.3)}
-.hero-title .line3{display:block;font-family:'Playfair Display',serif;font-style:italic;font-size:.28em;letter-spacing:3px;color:var(--rose-light);margin-top:12px;font-weight:400}
-@keyframes titleShimmer{0%,100%{background-position:0% center}50%{background-position:100% center}}
 .hero-content{max-width:760px;padding:50px 40px;background:var(--glass);backdrop-filter:blur(24px) saturate(1.3);border:1px solid var(--glass-border);border-radius:var(--neu-radius-lg);box-shadow:0 20px 60px rgba(160,64,80,.1),inset 0 1px 0 rgba(255,255,255,.4);margin-top:40px}
 .hero-subtitle{font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;color:var(--gold);margin-bottom:12px;letter-spacing:1px}
 .hero p{font-size:1rem;line-height:1.85;color:var(--stone);margin-bottom:32px}
@@ -156,16 +151,6 @@ nav.scrolled{background:rgba(240,230,232,.95);box-shadow:0 4px 30px rgba(160,64,
 .placeholder-card p{font-size:.85rem;color:var(--stone);line-height:1.6}
 
 /* Vignettes */
-.vignettes{padding:100px 5%;background:var(--bg-deep)}
-.vignette-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:40px;max-width:1200px;margin:0 auto}
-.vignette{background:var(--bg);border-radius:var(--neu-radius-lg);overflow:hidden;box-shadow:14px 14px 36px var(--shadow-dark),-14px -14px 36px var(--shadow-light);transition:var(--transition)}
-.vignette:hover{transform:translateY(-8px);box-shadow:20px 20px 50px var(--shadow-dark),-20px -20px 50px var(--shadow-light)}
-.vignette-img{width:100%;aspect-ratio:16/10;object-fit:cover;filter:grayscale(.1) contrast(1.05);transition:filter .5s}
-.vignette:hover .vignette-img{filter:grayscale(0) contrast(1.1)}
-.vignette-body{padding:30px}.vignette-body h3{font-family:'Cinzel',serif;color:var(--rose);font-size:1.3rem;margin-bottom:10px}
-.vignette-body p{font-size:.9rem;color:var(--stone);line-height:1.7;margin-bottom:20px}
-.vignette-cta{display:inline-block;padding:10px 24px;background:var(--bg);color:var(--gold);text-decoration:none;font-weight:700;font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;border-radius:50px;box-shadow:4px 4px 10px var(--shadow-dark),-4px -4px 10px var(--shadow-light);transition:var(--transition)}
-.vignette-cta:hover{box-shadow:inset 3px 3px 6px var(--shadow-dark),inset -3px -3px 6px var(--shadow-light);color:var(--rose)}
 
 /* FAQ */
 .faq{padding:100px 5%;max-width:800px;margin:0 auto}
@@ -241,26 +226,28 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
 .option-btn.sold .opt-stock{color:var(--rose)}
 
 /* Responsive */
-@media(max-width:768px){.nav-links{display:none}.hero{padding:120px 16px 60px}.hero-content{padding:36px 24px}.catalogue-grid{grid-template-columns:1fr}.section-head{flex-direction:column;align-items:flex-start}.foot-grid{grid-template-columns:1fr 1fr;gap:40px}.modal-card{grid-template-columns:1fr;max-height:92vh;overflow-y:auto}.modal-img{aspect-ratio:1/1}.vignette-grid{grid-template-columns:1fr}.wa-fab{width:60px;height:60px}.wa-fab svg{width:28px;height:28px}.about-card{padding:40px 24px}.contact-box{padding:40px 24px}.option-grid{grid-template-columns:1fr}.footer-hero-img{padding:40px 16px 30px}.poc-banner{padding:24px 20px}}
-@media(max-width:480px){.foot-grid{grid-template-columns:1fr}.filter-btn{padding:10px 18px;font-size:.75rem}.marquee span{margin:0 20px}.hero-title{font-size:2.2rem}}
+@media(max-width:768px){.nav-links{display:none}.hero{padding:120px 16px 60px}.hero-content{padding:36px 24px}.catalogue-grid{grid-template-columns:1fr}.section-head{flex-direction:column;align-items:flex-start}.foot-grid{grid-template-columns:1fr 1fr;gap:40px}.modal-card{grid-template-columns:1fr;max-height:92vh;overflow-y:auto}.modal-img{aspect-ratio:1/1}.wa-fab{width:60px;height:60px}.wa-fab svg{width:28px;height:28px}.about-card{padding:40px 24px}.contact-box{padding:40px 24px}.option-grid{grid-template-columns:1fr}.footer-hero-img{padding:40px 16px 30px}.poc-banner{padding:24px 20px}}
+@media(max-width:480px){.foot-grid{grid-template-columns:1fr}.filter-btn{padding:10px 18px;font-size:.75rem}.marquee span{margin:0 20px}}
 ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}::-webkit-scrollbar-thumb:hover{background:var(--rose-light)}
 ::selection{background:rgba(160,64,80,.2);color:var(--rose)}
 </style>
 </head>
 <body>
 
-<!-- LOADING SCREEN -->
+<!-- LOADING SCREEN — Cloudinary video background, no white fill -->
 <div id="loader">
-  <img src="https://res.cloudinary.com/h7kbydly/image/upload/v1784139996/bg1_besqcm.webp" alt="Five Hearts Events" class="loader-logo">
-  <p class="loader-text">FIVE HEARTS</p>
-  <div class="loader-hearts">
-    <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+  <video id="loaderPlayer" muted autoplay loop playsinline></video>
+  <div class="loader-overlay">
+    <p class="loader-text">FIVE HEARTS</p>
+    <div class="loader-hearts">
+      <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    </div>
   </div>
 </div>
 
-<!-- VIDEO HERO (Cloudinary Player) -->
+<!-- STATIC IMAGE HERO -->
 <div class="parallax-hero">
-  <video id="player" muted autoplay loop playsinline></video>
+  <img src="https://raw.githubusercontent.com/searchplaybook-crypto/5hearts/main/assets/main-hero.webp" alt="Five Hearts Events" class="hero-bg-img">
 </div>
 <canvas id="bg-canvas"></canvas>
 
@@ -274,7 +261,6 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <li><a href="#home">Home</a></li>
     <li><a href="#about">Our Story</a></li>
     <li><a href="#catalogue">Collection</a></li>
-    <li><a href="#vignettes">Events</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -286,11 +272,6 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
 
 <!-- HERO SECTION -->
 <section class="hero" id="home">
-  <div class="hero-title">
-    <span class="line1">FIVE HEARTS</span>
-    <span class="line2">EVENTS DECOR & HIRE</span>
-    <span class="line3">We Decorate Memories. You Celebrate Life.</span>
-  </div>
   <div class="hero-content">
     <p class="hero-subtitle">Events Decor & Hire - Cape Town</p>
     <p>We specialise in luxury event conceptualisation, decor styling, and design for weddings, anniversaries, birthdays, and corporate functions across Athlone, Bridgetown, and greater Cape Town. From intimate gatherings to grand celebrations - we decorate memories so you can celebrate life.</p>
@@ -699,7 +680,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="catering" data-id="ca2">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/catering-chafing-dish.jpg" alt="Chafing Dish" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-chafingdish.jpg" alt="Chafing Dish" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Chafing Dish</h3>
@@ -735,7 +716,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="display" data-id="d1">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-easel-sm.jpg" alt="Display Easel (Small)" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/wood-easel-sm.jpg" alt="Display Easel (Small)" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Display Easel (Small)</h3>
@@ -753,7 +734,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="display" data-id="d2">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-easel-lrg.jpg" alt="Display Easel (Large)" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/wood-easel-lrg.jpg" alt="Display Easel (Large)" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Display Easel (Large)</h3>
@@ -771,7 +752,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="display" data-id="d3">
       <div class="card-img-wrap">
         <div class="card-tag low">Only 4 left</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-bench-3-tier.jpg" alt="3-Tier Display Bench" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/wood-3tier-display-bench.jpg" alt="3-Tier Display Bench" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">3-Tier Display Bench</h3>
@@ -789,7 +770,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="display" data-id="d4">
       <div class="card-img-wrap">
         <div class="card-tag low">Only 4 left</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-ladder-3-tier.jpg" alt="3-Tier Display Ladder" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/wood-3tier-display%20ladder.jpg" alt="3-Tier Display Ladder" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">3-Tier Display Ladder</h3>
@@ -807,7 +788,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="decor" data-id="de1">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-toothpick-holder-porcelain.jpg" alt="Porcelain Toothpick Holder" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-toothpick-holder.jpg" alt="Porcelain Toothpick Holder" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Porcelain Toothpick Holder</h3>
@@ -825,7 +806,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="decor" data-id="de2">
       <div class="card-img-wrap">
         <div class="card-tag">Available</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-candelabra.jpg" alt="Candelabra" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-candlelabra.jpg" alt="Candelabra" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Candelabra</h3>
@@ -843,7 +824,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     <div class="card" data-cat="decor" data-id="de3">
       <div class="card-img-wrap">
         <div class="card-tag low">Only 2 left</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-smoke-machine-disco-light.jpg" alt="Smoke Machine & Disco Light" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
+        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/light-smoke-machine.jpg" alt="Smoke Machine & Disco Light" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
       </div>
       <div class="card-body">
         <h3 class="brand-font">Smoke Machine & Disco Light</h3>
@@ -971,45 +952,6 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
   </div>
 </section>
 
-<!-- EVENT VIGNETTES -->
-<!-- NOTE: Wedding/Birthday/Corporate images below are Unsplash stock placeholders,
-     not Five Hearts photography. Swap for real Cloudinary assets when available. -->
-<section class="vignettes" id="vignettes">
-  <div class="section-head" style="max-width:1200px;margin:0 auto 60px;">
-    <div>
-      <div class="section-label">Event Inspiration</div>
-      <h2 class="section-title">Curated Moments. <em>Coming Soon.</em></h2>
-    </div>
-    <div class="section-label">Cape Town Styled Shoots</div>
-  </div>
-  <div class="vignette-grid">
-    <div class="vignette">
-      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80" alt="Wedding" class="vignette-img">
-      <div class="vignette-body">
-        <h3>Wedding Receptions</h3>
-        <p>From intimate chapel ceremonies to grand ballroom celebrations - our curated glassware, porcelain, and linen collections set the table for your forever.</p>
-        <a href="#contact" class="vignette-cta">Enquire Now</a>
-      </div>
-    </div>
-    <div class="vignette">
-      <img src="https://images.unsplash.com/photo-1530103862676-de3c9a59aa38?w=600&q=80" alt="Birthday" class="vignette-img">
-      <div class="vignette-body">
-        <h3>Birthday Celebrations</h3>
-        <p>Milestone birthdays deserve milestone styling. Chair covers, themed table runners, and statement centrepieces that make every year unforgettable.</p>
-        <a href="#contact" class="vignette-cta">Enquire Now</a>
-      </div>
-    </div>
-    <div class="vignette">
-      <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&q=80" alt="Corporate" class="vignette-img">
-      <div class="vignette-body">
-        <h3>Corporate Functions</h3>
-        <p>Elevate your brand events with professional-grade catering equipment, display easels, and elegant table settings that impress clients and teams alike.</p>
-        <a href="#contact" class="vignette-cta">Enquire Now</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="section-head" style="margin-bottom:50px;">
@@ -1069,7 +1011,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
       <span class="faq-icon">+</span>
     </button>
     <div class="faq-answer">
-      <p>[[PLACEHOLDER — breakage rate and terms pending confirmation from Five Hearts. Do not publish live until replaced.]] A breakage and damage fee applies across all hired items for the duration of your rental. Full terms are shared with your quote before booking is confirmed.</p>
+      <p>A refundable breakage deposit is payable with every booking, held separately from your rental fee. Once all items are returned and inspected, the full deposit is refunded within 7 business days if nothing is missing or damaged. If any items are lost, broken, stained, or need excessive cleaning, the reasonable repair or replacement cost is deducted from the deposit — you'll always be notified of any deduction with an itemised breakdown on request. Normal wear and tear is never charged. Full Terms & Conditions are shared with your quote before booking is confirmed.</p>
     </div>
   </div>
 </section>
@@ -1114,7 +1056,8 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h4>Info</h4>
         <a href="#about">Our Story</a>
         <a href="#faq">FAQ</a>
-        <a href="#vignettes">Event Ideas</a>
+        <!-- PLACEHOLDER: no terms.html built yet — points to # until that page exists -->
+        <a href="#" onclick="alert('Full Terms & Conditions page coming soon. Contact us on WhatsApp for the full PDF.');return false;">Terms & Conditions</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -1234,15 +1177,15 @@ const catalogue = {
   p4:{name:"Side Plate",cat:"porcelain",stock:48,desc:"Matching porcelain side plate for bread, starters, or dessert courses.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-side-plate.jpg"},
   p5:{name:"Teapot",cat:"porcelain",stock:6,desc:"Elegant porcelain teapot with curved spout and lid. A centrepiece for any tea service.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-teapot.jpg"},
   ca1:{name:"Electric Urn",cat:"catering",stock:4,desc:"Stainless steel electric urn for tea and coffee service. Keeps beverages hot throughout your event.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/electric-urn.jpg"},
-  ca2:{name:"Chafing Dish",cat:"catering",stock:6,desc:"Professional stainless steel chafing dish with fuel holder. Keep buffet dishes warm and presentable.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/catering-chafing-dish.jpg"},
+  ca2:{name:"Chafing Dish",cat:"catering",stock:6,desc:"Professional stainless steel chafing dish with fuel holder. Keep buffet dishes warm and presentable.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/ss-chafingdish.jpg"},
   ca3:{name:"Juice Dispenser (7L Glass)",cat:"catering",stock:3,desc:"Large 7-litre glass juice dispenser with ice core. Ideal for breakfast events and summer parties.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/catering-juice-dispenser-glass-7l.jpg"},
-  d1:{name:"Display Easel (Small)",cat:"display",stock:12,desc:"Compact wooden display easel for table numbers, menus, welcome signs, and photo displays.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-easel-sm.jpg"},
-  d2:{name:"Display Easel (Large)",cat:"display",stock:6,desc:"Tall wooden display easel for entrance signage, seating charts, and large artwork.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-easel-lrg.jpg"},
-  d3:{name:"3-Tier Display Bench",cat:"display",stock:4,desc:"Wooden 3-tier display bench for cupcakes, desserts, or decorative arrangements.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-bench-3-tier.jpg"},
-  d4:{name:"3-Tier Display Ladder",cat:"display",stock:4,desc:"Rustic wooden ladder-style 3-tier display stand. Perfect for vintage and boho-themed events.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/display-ladder-3-tier.jpg"},
-  de1:{name:"Porcelain Toothpick Holder",cat:"decor",stock:20,desc:"Delicate porcelain toothpick holder with floral detail. A subtle touch of elegance.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-toothpick-holder-porcelain.jpg"},
-  de2:{name:"Candelabra",cat:"decor",stock:8,desc:"Statement candelabra for dramatic table centrepieces. Holds multiple taper candles.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-candelabra.jpg"},
-  de3:{name:"Smoke Machine & Disco Light",cat:"decor",stock:2,desc:"Party essentials - smoke machine and disco light set for dance floors and celebrations.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/decor-smoke-machine-disco-light.jpg"},
+  d1:{name:"Display Easel (Small)",cat:"display",stock:12,desc:"Compact wooden display easel for table numbers, menus, welcome signs, and photo displays.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/wood-easel-sm.jpg"},
+  d2:{name:"Display Easel (Large)",cat:"display",stock:6,desc:"Tall wooden display easel for entrance signage, seating charts, and large artwork.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/wood-easel-lrg.jpg"},
+  d3:{name:"3-Tier Display Bench",cat:"display",stock:4,desc:"Wooden 3-tier display bench for cupcakes, desserts, or decorative arrangements.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/wood-3tier-display-bench.jpg"},
+  d4:{name:"3-Tier Display Ladder",cat:"display",stock:4,desc:"Rustic wooden ladder-style 3-tier display stand. Perfect for vintage and boho-themed events.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/wood-3tier-display%20ladder.jpg"},
+  de1:{name:"Porcelain Toothpick Holder",cat:"decor",stock:20,desc:"Delicate porcelain toothpick holder with floral detail. A subtle touch of elegance.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/porcelain-toothpick-holder.jpg"},
+  de2:{name:"Candelabra",cat:"decor",stock:8,desc:"Statement candelabra for dramatic table centrepieces. Holds multiple taper candles.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-candlelabra.jpg"},
+  de3:{name:"Smoke Machine & Disco Light",cat:"decor",stock:2,desc:"Party essentials - smoke machine and disco light set for dance floors and celebrations.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/light-smoke-machine.jpg"},
   f1:{name:"Table Cloth",cat:"furniture",stock:20,desc:"Premium table cloths in blush, ivory, and white. Available in multiple sizes to fit round and rectangular tables.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-table-cloth.jpg"},
   f2:{name:"Table Runners",cat:"furniture",stock:24,desc:"Elegant table runners in lace, satin, and sequin finishes. Layer over cloths for added texture.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-tablerunners.jpg"},
   f3:{name:"Basic Chair",cat:"furniture",stock:100,desc:"Classic banquet chair with padded seat. Comfortable, stackable, and versatile for any event size.",img:"https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/deco-chair-basic.jpg"},
@@ -1389,8 +1332,8 @@ document.querySelectorAll('.cta-btn, .wa-enquire, .wa-fab').forEach(btn => {
   btn.addEventListener('mouseenter', spawnHeartHint);
 });
 
-/* CLOUDINARY HERO VIDEO PLAYER */
-const player = cloudinary.videoPlayer('player', {
+/* CLOUDINARY VIDEO — now powers the loader background, not the hero */
+const player = cloudinary.videoPlayer('loaderPlayer', {
   cloudName: 'h7kbydly',
   publicId: 'heromov1_qujv4l',
   muted: true,
@@ -1471,8 +1414,7 @@ window.addEventListener('scroll', () => {
 function initAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from('.hero-title', { opacity: 0, y: 40, duration: 1, delay: 0.5 });
-  gsap.from('.hero-content', { opacity: 0, y: 50, duration: 1, delay: 0.8 });
+  gsap.from('.hero-content', { opacity: 0, y: 50, duration: 1, delay: 0.5 });
   gsap.from('.about-card', { opacity: 0, y: 60, duration: 1, scrollTrigger: { trigger: '.about', start: 'top 80%', once: true, invalidateOnRefresh: true } });
   gsap.from('.poc-banner', { opacity: 0, y: 30, duration: 0.8, scrollTrigger: { trigger: '.poc-banner', start: 'top 85%', once: true, invalidateOnRefresh: true } });
   /* Option 1 fix (confirmed 16 Jul 2026): ScrollTrigger removed from .card.
@@ -1483,7 +1425,6 @@ function initAnimations() {
      Visibility for cards is now handled purely by the existing CSS onload fade
      (opacity:0 -> 1 per <img onload>), which cannot get stuck. */
   gsap.set('.card', { clearProps: 'opacity,transform' });
-  gsap.from('.vignette', { opacity: 0, y: 50, duration: 0.8, stagger: 0.15, scrollTrigger: { trigger: '.vignettes', start: 'top 80%', once: true, invalidateOnRefresh: true } });
   gsap.from('.faq-item', { opacity: 0, x: -30, duration: 0.6, stagger: 0.1, scrollTrigger: { trigger: '.faq', start: 'top 80%', once: true, invalidateOnRefresh: true } });
   gsap.from('.contact-box', { opacity: 0, y: 50, duration: 1, scrollTrigger: { trigger: '.contact', start: 'top 80%', once: true, invalidateOnRefresh: true } });
 
