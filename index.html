@@ -43,7 +43,6 @@ h1,h2,h3,h4,h5,h6,.brand-font{font-family:'Cinzel',serif}.serif-font{font-family
 /* Video Hero (replaces static parallax image) */
 .parallax-hero{position:fixed;top:0;left:0;width:100%;height:120%;z-index:-3;overflow:hidden;will-change:transform;background:#2c1810}
 .parallax-hero video,.parallax-hero .cld-video-player{width:100%;height:100%;object-fit:cover}
-.parallax-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(240,230,232,.3) 0%,rgba(240,230,232,.7) 60%,var(--bg) 100%)}
 #bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;pointer-events:none}
 
 /* Nav */
@@ -969,6 +968,8 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
 </section>
 
 <!-- EVENT VIGNETTES -->
+<!-- NOTE: Wedding/Birthday/Corporate images below are Unsplash stock placeholders,
+     not Five Hearts photography. Swap for real Cloudinary assets when available. -->
 <section class="vignettes" id="vignettes">
   <div class="section-head" style="max-width:1200px;margin:0 auto 60px;">
     <div>
@@ -1056,6 +1057,15 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
     </button>
     <div class="faq-answer">
       <p>We recommend booking at least 4-6 weeks in advance for weddings and large events, and 2-3 weeks for smaller gatherings. Peak season (November-January) fills up quickly.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      What happens if an item is damaged or broken?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>[[PLACEHOLDER — breakage rate and terms pending confirmation from Five Hearts. Do not publish live until replaced.]] A breakage and damage fee applies across all hired items for the duration of your rental. Full terms are shared with your quote before booking is confirmed.</p>
     </div>
   </div>
 </section>
@@ -1386,15 +1396,14 @@ const player = cloudinary.videoPlayer('player', {
   fluid: true
 });
 
-/* LOADING SCREEN */
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    const loader = document.getElementById('loader');
-    loader.style.opacity = '0';
-    loader.style.visibility = 'hidden';
-    initAnimations();
-  }, 3000);
-});
+/* LOADING SCREEN — fixed 2.5s minimum, does not wait on video load event */
+setTimeout(() => {
+  const loader = document.getElementById('loader');
+  loader.style.opacity = '0';
+  loader.style.visibility = 'hidden';
+  setTimeout(() => { loader.style.display = 'none'; }, 1000);
+  initAnimations();
+}, 2500);
 
 /* PARALLAX */
 window.addEventListener('scroll', () => {
