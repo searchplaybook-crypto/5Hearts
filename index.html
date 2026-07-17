@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Five Hearts Events Décor & Hire | Cape Town — We Decorate Memories</title>
-<meta name="description" content="Luxury event décor hire in Athlone, Bridgetown, Cape Town. Glassware, cutlery, porcelain, catering, chairs, tables & floral décor for weddings, birthdays & anniversaries. WhatsApp enquiry only.">
-<meta name="keywords" content="event décor hire Cape Town, wedding décor Athlone, Bridgetown party hire, glassware hire, cutlery rental, porcelain hire, chair covers, table linen, event styling South Africa">
+<meta name="description" content="Luxury event décor hire in Athlone and Southern suburbs, Cape Town. Glassware, cutlery, porcelain, catering, chairs, tables & floral décor for weddings, birthdays & anniversaries. WhatsApp enquiry only.">
+<meta name="keywords" content="event décor hire Cape Town, wedding décor Athlone, Southern suburbs party hire, glassware hire, cutlery rental, porcelain hire, chair covers, table linen, event styling South Africa">
 <meta name="geo.region" content="ZA-WC">
-<meta name="geo.placename" content="Athlone, Bridgetown, Cape Town">
+<meta name="geo.placename" content="Athlone, Southern suburbs, Cape Town">
 <meta name="geo.position" content="-33.9631;18.5083">
 <meta name="ICBM" content="-33.9631, 18.5083">
 <meta name="theme-color" content="#a04050">
@@ -26,9 +26,10 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--ink);overflo
 h1,h2,h3,h4,h5,h6,.brand-font{font-family:'Cinzel',serif}.serif-font{font-family:'Playfair Display',serif}
 
 /* Loader */
-#loader{position:fixed;inset:0;z-index:9999;overflow:hidden;background:#2c1810;display:flex;justify-content:center;align-items:center;transition:opacity 1s ease,visibility 1s}
-#loaderPlayer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.loader-overlay{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:30px 50px;background:rgba(44,24,16,.35);backdrop-filter:blur(6px);border-radius:var(--neu-radius-lg)}
+#loader{position:fixed;inset:0;z-index:9999;background:#2c1810;display:flex;align-items:center;justify-content:center;transition:opacity 1s ease,visibility 1s}
+#loader::before{content:'';position:absolute;inset:0;background-image:url('https://raw.githubusercontent.com/searchplaybook-crypto/5hearts/main/assets/intro1.webp');background-size:cover;background-position:center;opacity:.7;z-index:0}
+.loader-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7;z-index:0}
+.loader-overlay{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:30px 50px;background:rgba(44,24,16,.4);backdrop-filter:blur(8px);border-radius:var(--neu-radius-lg);margin-top:-120px}
 .loader-text{margin-top:0;font-family:'Cinzel',serif;font-size:2.4rem;letter-spacing:10px;color:var(--gold-light);font-weight:700;animation:shimmerText 2.5s ease-in-out infinite;background:linear-gradient(90deg,var(--gold-light),var(--gold),var(--gold-light));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-shadow:0 4px 20px rgba(0,0,0,.3)}
 .loader-hearts{display:flex;gap:16px;margin-top:22px}
 .loader-hearts span{color:var(--gold-light);font-size:1.5rem;opacity:0;animation:loaderHeartFloat 1.8s ease-in-out infinite;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4))}
@@ -128,6 +129,8 @@ nav.scrolled{background:rgba(240,230,232,.95);box-shadow:0 4px 30px rgba(160,64,
 .card:hover .card-img{transform:scale(1.06);filter:contrast(1.2) saturate(1.15)}
 .card-tag{position:absolute;top:16px;left:16px;z-index:3;padding:8px 14px;background:var(--bg);border-radius:20px;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--rose);box-shadow:3px 3px 8px var(--shadow-dark),-3px -3px 8px var(--shadow-light)}
 .card-tag.low{background:var(--rose);color:#fff;box-shadow:0 4px 15px rgba(160,64,80,.3)}
+.card-tag.hot-item-badge{background:var(--gold-light);color:var(--rose);animation:hotItemPulse 1.4s ease-in-out infinite;box-shadow:0 4px 15px rgba(212,175,55,.35)}
+@keyframes hotItemPulse{0%,100%{transform:scale(1);box-shadow:0 4px 15px rgba(212,175,55,.35)}50%{transform:scale(1.05);box-shadow:0 6px 20px rgba(212,175,55,.5)}}
 .card-body{padding:26px}.card-body h3{font-size:1.2rem;color:var(--rose);margin-bottom:8px;line-height:1.2}
 .card-body p{font-size:.88rem;color:var(--stone);line-height:1.65;margin-bottom:18px}
 .card-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
@@ -234,9 +237,9 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
 </head>
 <body>
 
-<!-- LOADING SCREEN — Cloudinary video background, no white fill -->
+<!-- LOADING SCREEN — Static landscape flower bouquet image -->
 <div id="loader">
-  <video id="loaderPlayer" muted autoplay loop playsinline></video>
+  <img src="https://raw.githubusercontent.com/searchplaybook-crypto/5hearts/main/assets/intro1.webp" alt="Five Hearts Events" class="loader-bg">
   <div class="loader-overlay">
     <p class="loader-text">FIVE HEARTS</p>
     <div class="loader-hearts">
@@ -274,7 +277,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
 <section class="hero" id="home">
   <div class="hero-content">
     <p class="hero-subtitle">Events Decor & Hire - Cape Town</p>
-    <p>We specialise in luxury event conceptualisation, decor styling, and design for weddings, anniversaries, birthdays, and corporate functions across Athlone, Bridgetown, and greater Cape Town. From intimate gatherings to grand celebrations - we decorate memories so you can celebrate life.</p>
+    <p>We specialise in luxury event conceptualisation, decor styling, and design for weddings, anniversaries, birthdays, and corporate functions across Athlone and the Southern suburbs. From intimate gatherings to grand celebrations - we decorate memories so you can celebrate life.</p>
     <a href="#catalogue" class="cta-btn" onclick="spawnHearts(event)">Explore Our Collection -</a>
   </div>
 </section>
@@ -283,12 +286,12 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
 <div class="marquee">
   <div class="marquee-inner">
     <span>WhatsApp Inquiry Only</span>
-    <span>Serving Athlone & Bridgetown</span>
+    <span>Serving Athlone Serving Athlone & Bridgetown Southern suburbs</span>
     <span>Decor Hire July 2026 - July 2027</span>
     <span>No Login Required - Human Response</span>
     <span>New Collection Coming Soon</span>
     <span>WhatsApp Inquiry Only</span>
-    <span>Serving Athlone & Bridgetown</span>
+    <span>Serving Athlone Serving Athlone & Bridgetown Southern suburbs</span>
     <span>Decor Hire July 2026 - July 2027</span>
     <span>No Login Required - Human Response</span>
     <span>New Collection Coming Soon</span>
@@ -344,7 +347,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Candy Jar</h3>
         <p>Elegant glass candy jar with lid - perfect for dessert tables, sweet bars, and wedding receptions.</p>
         <div class="card-meta">
-          <span class="card-stock">8 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('g1'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -362,7 +365,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Crystal Cut Liquor Decanter</h3>
         <p>Heavy-cut crystal liquor decanter with stopper. Adds sophistication to any bar setup.</p>
         <div class="card-meta">
-          <span class="card-stock">4 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('g2'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -380,7 +383,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Dessert Bowl</h3>
         <p>Clear glass dessert bowls ideal for mousse, trifle, or individual panna cotta servings.</p>
         <div class="card-meta">
-          <span class="card-stock">24 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('g3'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -398,7 +401,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Champagne Flute</h3>
         <p>Tall champagne flutes with elegant stem - toast in style at weddings and anniversaries.</p>
         <div class="card-meta">
-          <span class="card-stock">48 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('g4'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -416,7 +419,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Highball Glass</h3>
         <p>Versatile highball glasses for cocktails, mocktails, and long drinks at any celebration.</p>
         <div class="card-meta">
-          <span class="card-stock">36 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('g5'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -434,7 +437,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Glass Jug</h3>
         <p>Large glass serving jug with handle - perfect for infused water, sangria, or iced tea.</p>
         <div class="card-meta">
-          <span class="card-stock">6 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('g6'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -452,7 +455,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Juice Dispenser</h3>
         <p>Glass beverage dispenser with tap - a statement piece for self-serve drink stations.</p>
         <div class="card-meta">
-          <span class="card-stock">3 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('g7'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -470,7 +473,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Wine Glass</h3>
         <p>Classic stemmed wine glasses for red, white, or rose. Essential for any formal table setting.</p>
         <div class="card-meta">
-          <span class="card-stock">48 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('g8'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -488,7 +491,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Butter Knife</h3>
         <p>Stainless steel butter knife with elegant handle. Part of our premium cutlery collection.</p>
         <div class="card-meta">
-          <span class="card-stock">60 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('c1'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -506,7 +509,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Fish Fork</h3>
         <p>Specialised fish fork with delicate tines. Perfect for seafood courses and formal dining.</p>
         <div class="card-meta">
-          <span class="card-stock">36 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('c2'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -524,7 +527,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Dinner Fork</h3>
         <p>Heavy-duty stainless steel dinner fork. Polished finish that complements any tablescape.</p>
         <div class="card-meta">
-          <span class="card-stock">60 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('c3'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -542,7 +545,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Tablespoon</h3>
         <p>Generous stainless steel tablespoon for soups, stews, and shared dishes.</p>
         <div class="card-meta">
-          <span class="card-stock">60 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('c4'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -560,7 +563,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Teaspoons</h3>
         <p>Set of elegant stainless steel teaspoons for coffee, tea, and dessert service.</p>
         <div class="card-meta">
-          <span class="card-stock">72 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('c5'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -578,7 +581,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Cup & Saucer Set</h3>
         <p>Fine porcelain cup and saucer with subtle gold rim. Perfect for high tea and bridal showers.</p>
         <div class="card-meta">
-          <span class="card-stock">24 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('p1'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -596,7 +599,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Dinner Plate</h3>
         <p>Classic white porcelain dinner plate with gold rim detailing. Timeless elegance for any table.</p>
         <div class="card-meta">
-          <span class="card-stock">48 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('p2'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -614,7 +617,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Gravy Boat</h3>
         <p>Porcelain gravy boat with underplate. Serve sauces and dressings with refined style.</p>
         <div class="card-meta">
-          <span class="card-stock">8 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('p3'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -632,7 +635,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Side Plate</h3>
         <p>Matching porcelain side plate for bread, starters, or dessert courses.</p>
         <div class="card-meta">
-          <span class="card-stock">48 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('p4'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -650,7 +653,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Teapot</h3>
         <p>Elegant porcelain teapot with curved spout and lid. A centrepiece for any tea service.</p>
         <div class="card-meta">
-          <span class="card-stock">6 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('p5'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -668,7 +671,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Electric Urn</h3>
         <p>Stainless steel electric urn for tea and coffee service. Keeps beverages hot throughout your event.</p>
         <div class="card-meta">
-          <span class="card-stock">4 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('ca1'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -686,27 +689,9 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Chafing Dish</h3>
         <p>Professional stainless steel chafing dish with fuel holder. Keep buffet dishes warm and presentable.</p>
         <div class="card-meta">
-          <span class="card-stock">6 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('ca2'); spawnHearts(event);">
-          <span class="enquire-pulse"></span>
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          Enquire on WhatsApp
-        </button>
-      </div>
-    </div>
-    <div class="card" data-cat="catering" data-id="ca3">
-      <div class="card-img-wrap">
-        <div class="card-tag low">Only 3 left</div>
-        <img class="card-img" src="https://raw.githubusercontent.com/searchplaybook-crypto/5Hearts/main/assets/catering-juice-dispenser-glass-7l.jpg" alt="Juice Dispenser (7L Glass)" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e8d9dc'/%3E%3Cpath d='M100 140 C60 110 40 90 40 65 C40 45 55 32 72 32 C85 32 95 40 100 50 C105 40 115 32 128 32 C145 32 160 45 160 65 C160 90 140 110 100 140Z' fill='none' stroke='%23c97b84' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E';this.style.objectFit='contain';this.style.padding='20px'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .5s">
-      </div>
-      <div class="card-body">
-        <h3 class="brand-font">Juice Dispenser (7L Glass)</h3>
-        <p>Large 7-litre glass juice dispenser with ice core. Ideal for breakfast events and summer parties.</p>
-        <div class="card-meta">
-          <span class="card-stock">3 in stock</span>
-        </div>
-        <button class="wa-enquire" onclick="openModal('ca3'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
           <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
           Enquire on WhatsApp
@@ -722,7 +707,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Display Easel (Small)</h3>
         <p>Compact wooden display easel for table numbers, menus, welcome signs, and photo displays.</p>
         <div class="card-meta">
-          <span class="card-stock">12 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('d1'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -740,7 +725,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Display Easel (Large)</h3>
         <p>Tall wooden display easel for entrance signage, seating charts, and large artwork.</p>
         <div class="card-meta">
-          <span class="card-stock">6 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('d2'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -758,7 +743,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">3-Tier Display Bench</h3>
         <p>Wooden 3-tier display bench for cupcakes, desserts, or decorative arrangements.</p>
         <div class="card-meta">
-          <span class="card-stock">4 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('d3'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -776,7 +761,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">3-Tier Display Ladder</h3>
         <p>Rustic wooden ladder-style 3-tier display stand. Perfect for vintage and boho-themed events.</p>
         <div class="card-meta">
-          <span class="card-stock">4 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('d4'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -794,7 +779,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Porcelain Toothpick Holder</h3>
         <p>Delicate porcelain toothpick holder with floral detail. A subtle touch of elegance.</p>
         <div class="card-meta">
-          <span class="card-stock">20 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('de1'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -812,7 +797,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Candelabra</h3>
         <p>Statement candelabra for dramatic table centrepieces. Holds multiple taper candles.</p>
         <div class="card-meta">
-          <span class="card-stock">8 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('de2'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -830,7 +815,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Smoke Machine & Disco Light</h3>
         <p>Party essentials - smoke machine and disco light set for dance floors and celebrations.</p>
         <div class="card-meta">
-          <span class="card-stock">2 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('de3'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -848,7 +833,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Table Cloth</h3>
         <p>Premium table cloths in blush, ivory, and white. Available in multiple sizes to fit round and rectangular tables.</p>
         <div class="card-meta">
-          <span class="card-stock">20 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('f1'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -866,7 +851,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Table Runners</h3>
         <p>Elegant table runners in lace, satin, and sequin finishes. Layer over cloths for added texture.</p>
         <div class="card-meta">
-          <span class="card-stock">24 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('f2'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -884,7 +869,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Basic Chair</h3>
         <p>Classic banquet chair with padded seat. Comfortable, stackable, and versatile for any event size.</p>
         <div class="card-meta">
-          <span class="card-stock">100 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('f3'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -902,7 +887,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Chair Cover</h3>
         <p>Stretch chair covers in white, ivory, and black. Transform standard chairs into elegant seating.</p>
         <div class="card-meta">
-          <span class="card-stock">80 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('f4'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -920,7 +905,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
         <h3 class="brand-font">Chair Ribbon Sash</h3>
         <p>Satin and organza chair sashes in rose gold, blush, gold, and burgundy. Tie, bow, or drape.</p>
         <div class="card-meta">
-          <span class="card-stock">100 in stock</span>
+          <span class="card-stock" style="font-style:italic;color:var(--stone);">Tap to enquire on WhatsApp</span>
         </div>
         <button class="wa-enquire" onclick="openModal('f5'); spawnHearts(event);">
           <span class="enquire-pulse"></span>
@@ -975,7 +960,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
       <span class="faq-icon">+</span>
     </button>
     <div class="faq-answer">
-      <p>We are based in Athlone and primarily serve Bridgetown, Athlone, and surrounding Cape Town areas. Delivery and collection can be arranged for most locations within the greater Cape Town region.</p>
+      <p>We are based in Athlone and primarily serve the Southern suburbs and surrounding Cape Town areas. Delivery and collection can be arranged for most locations within the greater Cape Town region.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -1020,7 +1005,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
 <section class="contact" id="contact">
   <div class="contact-box">
     <h2 class="brand-font">Let's Create Magic Together</h2>
-    <p>Ready to transform your venue? Send us a message on WhatsApp with your event date, venue, and vision - we'll respond with a personalised quote within hours. Based in Athlone, serving Bridgetown and all of Cape Town.</p>
+    <p>Ready to transform your venue? Send us a message on WhatsApp with your event date, venue, and vision - we'll respond with a personalised quote within hours. Based in Athlone, serving the Southern suburbs and all of Cape Town.</p>
     <a href="https://wa.me/27825468606?text=Hello%20Five%20Hearts%2C%20I%20would%20like%20to%20enquire%20about%20decor%20hire%20for%20my%20upcoming%20event%20in%20Cape%20Town." 
        class="wa-main-btn" target="_blank" rel="noopener noreferrer" onclick="spawnHearts(event)">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
@@ -1049,7 +1034,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
       <div class="foot-col">
         <h4>Service Areas</h4>
         <a href="#">Athlone</a>
-        <a href="#">Bridgetown</a>
+        <a href="#">Southern suburbs</a>
         <a href="#">Greater Cape Town</a>
       </div>
       <div class="foot-col">
@@ -1070,7 +1055,7 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
 <!-- WHATSAPP FAB -->
 <div class="wa-fab-wrap">
   <div class="wa-label">Enquire</div>
-  <a href="https://wa.me/27825468606?text=Hello%20Five%20Hearts%2C%20I%20would%20like%20to%20enquire%20about%20decor%20hire." 
+  <a href="https://wa.me/27760229158?text=Hello%20Five%20Hearts%2C%20I%20would%20like%20to%20enquire%20about%20decor%20hire." 
      class="wa-fab" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" onclick="spawnHearts(event)">
     <span class="wa-badge" id="waBadge">0</span>
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
@@ -1106,7 +1091,8 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
   "@type": "LocalBusiness",
   "name": "Five Hearts Events Decor & Hire",
   "image": "https://res.cloudinary.com/h7kbydly/image/upload/v1784162713/Polish_20260716_022503440_sewzsr.png",
-  "telephone": "+27825468606",
+  "telephone": "+27760229158",
+  "email": "fiveheartsdecor@gmail.com",
   "url": "https://fiveheartsevents.co.za",
   "address": {
     "@type": "PostalAddress",
@@ -1130,10 +1116,11 @@ footer{position:relative;padding:0 0 40px;overflow:hidden;background:var(--bg)}
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer service",
-    "telephone": "+27825468606",
+    "telephone": "+27760229158",
+    "email": "fiveheartsdecor@gmail.com",
     "areaServed": "ZA",
     "availableLanguage": ["en-ZA"],
-    "url": "https://wa.me/27825468606"
+    "url": "https://wa.me/27760229158"
   },
   "sameAs": ["https://wa.me/27825468606"],
   "priceRange": "$$",
@@ -1333,16 +1320,6 @@ document.querySelectorAll('.cta-btn, .wa-enquire, .wa-fab').forEach(btn => {
 });
 
 /* CLOUDINARY VIDEO — now powers the loader background, not the hero */
-const player = cloudinary.videoPlayer('loaderPlayer', {
-  cloudName: 'h7kbydly',
-  publicId: 'heromov1_qujv4l',
-  muted: true,
-  autoplay: true,
-  loop: true,
-  controls: false,
-  fluid: true
-});
-
 /* LOADING SCREEN — fixed 2.5s minimum, does not wait on video load event */
 setTimeout(() => {
   const loader = document.getElementById('loader');
@@ -1350,15 +1327,23 @@ setTimeout(() => {
   loader.style.visibility = 'hidden';
   setTimeout(() => { loader.style.display = 'none'; }, 1000);
   initAnimations();
+  
+  /* Randomize 1 "hot item" per category with heart pulse */
+  const categories = ['glassware', 'cutlery', 'porcelain', 'catering', 'display', 'deco', 'chair'];
+  categories.forEach(cat => {
+    const items = Array.from(document.querySelectorAll(`.card[data-cat="${cat}"]`));
+    if (items.length > 0) {
+      const hotCard = items[Math.floor(Math.random() * items.length)];
+      const tag = hotCard.querySelector('.card-tag');
+      if (tag) {
+        tag.innerHTML = '♥ Hot Item';
+        tag.classList.add('hot-item-badge');
+      }
+    }
+  });
 }, 2500);
 
 /* PARALLAX */
-window.addEventListener('scroll', () => {
-  const scrolled = window.pageYOffset;
-  const parallax = document.querySelector('.parallax-hero');
-  if (parallax) parallax.style.transform = `translateY(${scrolled * 0.4}px)`;
-});
-
 /* NAV SCROLL */
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('navbar');
